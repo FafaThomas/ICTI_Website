@@ -1,0 +1,12 @@
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 2em;
+  margin-top: 0;
+}
+p {
+  font-size: 1em;
+  margin-top: 0;
+}
