@@ -12,6 +12,21 @@ body {
   color: #333;
 }
 
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -95,26 +110,30 @@ body {
 }
 
 .service-card,
-.product-card {
+.product-card,
+.partners-card {
   text-align: center;
   margin-bottom: 30px;
 }
 
 .service-card img,
-.product-card img {
+.product-card img,
+.partners-card img {
   width: 200px;
   height: auto;
   margin-bottom: 10px;
 }
 
 .service-card h3,
-.product-card h3 {
+.product-card h3,
+.partners-card h3 {
   font-size: 24px;
   margin-bottom: 10px;
 }
 
 .service-card p,
-.product-card p {
+.product-card p, 
+.partners-card p {
   font-size: 16px;
   color: #777;
 }
