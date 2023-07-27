@@ -70,33 +70,11 @@ body {
   color: #fff; /* Set your desired text color */
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column; /* Change the direction of navbar items on small screens */
-  }
-
-  .hamburger {
-    display: flex;
-    margin-right: 10px; /* Add margin to move the hamburger menu to the right side */
-  }
-
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px;
-    right: 0; /* Move the navigation list to the right side */
-    background-color: #333;
-    width: 100%;
-    z-index: 1;
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 
 .logo img {
   width: 150px;
