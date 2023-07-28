@@ -15,3 +15,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   setInterval(nextImage, 5000); // Change image every 5 seconds
 });
+
+const hamburgerBtn = document.querySelector(".hamburger-btn");
+
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerBtn.classList.toggle("active");
+});
+
