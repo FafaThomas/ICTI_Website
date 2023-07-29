@@ -22,3 +22,19 @@ hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero h2");
+  setTimeout(() => {
+    hero.style.opacity = 1;
+    hero.style.transform = "translateY(0)";
+  }, 500); // Adjust the delay (in milliseconds) to control when the animation starts
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelector(".btn");
+  setTimeout(() => {
+    btn.style.opacity = 1;
+    btn.style.transform = "translateY(0)";
+  }, 750); // Adjust the delay (in milliseconds) to control when the animation starts
+});
+
