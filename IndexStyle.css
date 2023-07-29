@@ -117,18 +117,20 @@ body {
 }
 
 /* Show menu when the button is active */
-.hamburger-btn.active ~ .nav-links li{
+.hamburger-btn.active ~ .menu-container{
   display:inline-flex;
 }
 
-
+.menu-container {
+  display: none;
+}
 
 .nav-links {
   list-style: none;
 }
 
 .nav-links li {
-  display: none;
+  display: inline-flex;
   margin-left: 20px;
 }
 
