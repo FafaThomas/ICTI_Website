@@ -119,7 +119,6 @@ body {
 /* Show menu when the button is active */
 .hamburger-btn.active ~ .nav-links li{
   display:inline-flex;
-  transform: translateX(0); /* Slide the menu in from the right */
 }
 
 
@@ -131,8 +130,6 @@ body {
 .nav-links li {
   display: none;
   margin-left: 20px;
-  transform: translateX(100%); /* Start with the menu off-screen to the right */
-  transition: transform .3s ease-out;
 }
 
 .nav-links a {
