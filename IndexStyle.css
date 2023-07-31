@@ -285,4 +285,42 @@ body {
     justify-content:space-between;
     align-items: center;
   }
+  .nav-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+  }
+
+  .hamburger-btn {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    transform: translateX(500%);
+    transition-duration: 1s;
+  }
+
+  .menu-container {
+    transform: translateX(0%);
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links li{
+    padding-top: 5px;
+  }
+
+  .header {
+    height: 400px; /* Set the desired height for your header */
+  }
+   .hero {
+    transform: translateY(-100%);
+   }
 }

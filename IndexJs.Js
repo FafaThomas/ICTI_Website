@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
+const windowWidth = window.innerWidth;
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
-  
-  if (hamburgerBtn.classList.contains("active")) {
-    document.getElementById("burger-btn").style.transform = "translateX(0%)";
-  } else {  
-    document.getElementById("burger-btn").style.transform = "translateX(1500%)";
-  }
+    if (hamburgerBtn.classList.contains("active")) {
+      document.getElementById("burger-btn").style.transform = "translateX(0%)";
+    } else {  
+      document.getElementById("burger-btn").style.transform = "translateX(1500%)";
+    }
   
 });
 
