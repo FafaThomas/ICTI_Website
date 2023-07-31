@@ -17,10 +17,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
-
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
+  
+  if (hamburgerBtn.classList.contains("active")) {
+    document.getElementById("burger-btn").style.transform = "translateX(50%)";
+  } else {
+    document.getElementById("burger-btn").style.transform = "translateX(1500%)";
+  }
+  
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero h2");
