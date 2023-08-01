@@ -29,6 +29,8 @@ hamburgerBtn.addEventListener("click", () => {
 });
 
 const mobileburgerBtn = document.querySelector(".mobileburger-btn");
+const headerY = document.querySelector(".mobileburger-btn");
+
 mobileburgerBtn.addEventListener("click", () => {
   mobileburgerBtn.classList.toggle("active");
   hamburgerBtn.classList.toggle("active");
