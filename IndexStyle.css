@@ -28,6 +28,7 @@ body {
   width: 100%;
   height: 300px; /* Set the desired height for your header */
   overflow: hidden;
+  transition-duration: .7s;
 }
 
 .OpacityGray{
@@ -118,6 +119,29 @@ body {
   transform: translateY(-9px) rotate(45deg);
 }
 
+.mobileburger-btn {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  transform: translateX(500%);
+  transition-duration: 1s;
+}
+
+.mobileburger-btn.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(-45deg);
+}
+
+.mobileburger-btn.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileburger-btn.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(45deg);
+}
+
 .menu-container {
   display: inline-flex;
   transform: translateX(100%);
@@ -127,6 +151,11 @@ body {
 
 /* Show menu when the button is active */
 .hamburger-btn.active ~ .menu-container{
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.mobileburger-btn.active ~ .menu-container{
   transform: translateX(0%);
   opacity: 1;
 }
@@ -293,14 +322,12 @@ body {
   }
 
   .hamburger-btn {
-    cursor: pointer;
+    display: none;
+  }
+
+  .mobileburger-btn {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    transform: translateX(500%);
-    transition-duration: 1s;
   }
 
   .menu-container {
@@ -320,7 +347,7 @@ body {
   .header {
     height: 400px; /* Set the desired height for your header */
   }
-   .hero {
-    transform: translateY(-100%);
+   .hero {  
+    transform: translateY(-150%);
    }
 }

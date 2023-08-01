@@ -17,15 +17,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const hamburgerBtn = document.querySelector(".hamburger-btn");
-const windowWidth = window.innerWidth;
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
+  mobileburgerBtn.classList.toggle("active");
     if (hamburgerBtn.classList.contains("active")) {
       document.getElementById("burger-btn").style.transform = "translateX(0%)";
     } else {  
       document.getElementById("burger-btn").style.transform = "translateX(1500%)";
     }
   
+});
+
+const mobileburgerBtn = document.querySelector(".mobileburger-btn");
+mobileburgerBtn.addEventListener("click", () => {
+  mobileburgerBtn.classList.toggle("active");
+  hamburgerBtn.classList.toggle("active");
 });
 
 
