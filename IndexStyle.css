@@ -95,8 +95,8 @@ body {
   justify-content: space-around;
   width: 30px;
   height: 25px;
-  transform: translateX(1500%);
-  transition-duration: 1s;
+  transform: translateX(1200%);
+  transition-duration: .5s;
 }
 
 .bar {
@@ -145,7 +145,7 @@ body {
 .menu-container {
   display: inline-flex;
   transform: translateX(100%);
-  transition-duration: 1s;
+  transition-duration: .5s;
   opacity: 0;
 }
 
@@ -156,8 +156,12 @@ body {
 }
 
 .mobileburger-btn.active ~ .menu-container{
-  transform: translateX(0%);
+  
   opacity: 1;
+}
+
+.mobileburger-btn.active ~ .header{
+height: 100%;
 }
 
 .nav-links {
@@ -166,6 +170,7 @@ body {
 
 .nav-links li {
   display: inline-flex;
+  margin-top: 10px;
   margin-left: 20px;
   
 }
@@ -180,22 +185,24 @@ body {
   color: #ccc;
 }
 
-.hero {
+.dhero {
+  display: block;
   text-align: center;
   margin-top: 50px;
-  
+  transition-duration: .5s;
+  transform: translateY(0%);
 }
 
-.hero h2 {
+.dhero h2 {
   font-size: 20px;
   margin-bottom: 10px;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
   
 }
 
-.btn {
+.dbtn {
   display: inline-block;
   padding: 10px 20px;
   background-color: #333;
@@ -204,12 +211,47 @@ body {
   border-radius: 10px;
   transition: background-color 1s;
   margin-top: 2%;
-  opacity: 0;
+  opacity: 1;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
-.btn:hover {
+.dbtn:hover {
+  background-color: #555;
+}
+
+.mhero {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+  transition-duration: .5s;
+  transform: translateY(-120%);
+}
+
+.mhero h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  opacity: 1;
+  transform: translateY(-30%);
+  transition: opacity 1s ease, transform 1s ease;
+  
+}
+
+.mbtn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background-color 1s;
+  margin-top: 2%;
+  opacity: 1;
+  transform: translateY(-30%);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.mbtn:hover {
   background-color: #555;
 }
 
@@ -347,7 +389,13 @@ body {
   .header {
     height: 400px; /* Set the desired height for your header */
   }
-   .hero {  
-    transform: translateY(-150%);
-   }
+
+  .dhero{
+    opacity: 0;
+    display: none;
+  }
+  .mhero{
+    opacity: 1;
+    display: block;
+  }
 }
