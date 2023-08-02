@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+  // Slideshow
   const images = document.querySelectorAll(".banner-img");
   let currentIndex = 0;
 
@@ -14,27 +15,43 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   setInterval(nextImage, 5000); // Change image every 5 seconds
-});
 
-const hamburgerBtn = document.querySelector(".hamburger-btn");
+  // Hero section animation
+  const hero = document.querySelector(".dhero h2");
+  setTimeout(() => {
+    hero.style.opacity = 1;
+    hero.style.transform = "translateY(0)";
+  }, 500); // Adjust the delay (in milliseconds) to control when the animation starts
 
-
-hamburgerBtn.addEventListener("click", () => {
-  
-  hamburgerBtn.classList.toggle("active");
-  if (mobileburgerBtn.classList.contains("active")){
-    mobileburgerBtn.classList.toggle("active");
-  }
-    if (hamburgerBtn.classList.contains("active")) {
-      document.getElementById("burger-btn").style.transform = "translateX(0%)";
-    } else {  
-      document.getElementById("burger-btn").style.transform = "translateX(1200%)";
+  // Button animation
+  const btn = document.querySelector(".dbtn");
+  setTimeout(() => {
+    if (window.innerWidth > 768) {
+      btn.style.opacity = 1;
+      btn.style.transform = "translateY(0)";
+    } else {
+      btn.style.opacity = 0;
+      btn.style.transform = "translateY(30px)";
     }
-  
+  }, 750); // Adjust the delay (in milliseconds) to control when the animation starts
 });
 
+// Hamburger menu
+const hamburgerBtn = document.querySelector(".hamburger-btn");
 const mobileburgerBtn = document.querySelector(".mobileburger-btn");
 const headerElement = document.getElementById('header');
+
+hamburgerBtn.addEventListener("click", () => {
+  hamburgerBtn.classList.toggle("active");
+  if (mobileburgerBtn.classList.contains("active")) {
+    mobileburgerBtn.classList.toggle("active");
+  }
+  if (hamburgerBtn.classList.contains("active")) {
+    document.getElementById("burger-btn").style.transform = "translateX(0%)";
+  } else {  
+    document.getElementById("burger-btn").style.transform = "translateX(1200%)";
+  }
+});
 
 mobileburgerBtn.addEventListener("click", () => {
   mobileburgerBtn.classList.toggle("active");
@@ -51,34 +68,9 @@ mobileburgerBtn.addEventListener("click", () => {
   }
 });
 
-if (window.innerWidth <= 768 && mobileburgerBtn.classList.contains("active")){
+if (window.innerWidth <= 768 && mobileburgerBtn.classList.contains("active")) {
   let currentHeight = headerElement.clientHeight;
-    let newHeight = currentHeight - 60;
-    headerElement.style.height = `${newHeight}px`;
-    document.getElementById("mhero").style.transform = "translateY(-120%)";
+  let newHeight = currentHeight - 60;
+  headerElement.style.height = `${newHeight}px`;
+  document.getElementById("mhero").style.transform = "translateY(-120%)";
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const hero = document.querySelector(".dhero h2");
-  setTimeout(() => {
-      hero.style.opacity = 1;
-      hero.style.transform = "translateY(0)";
-  }, 500); // Adjust the delay (in milliseconds) to control when the animation starts
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".dbtn");
-  setTimeout(() => {
-    if (window.innerWidth > 768){
-      btn.style.opacity = 1;
-      btn.style.transform = "translateY(0)";
-    }else{
-      btn.style.opacity = 0;
-      btn.style.transform = "translateY(30px)";
-    }
-    
-  }, 750); // Adjust the delay (in milliseconds) to control when the animation starts
-});
-
-
-
