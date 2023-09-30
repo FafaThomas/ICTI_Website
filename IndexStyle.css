@@ -17,7 +17,20 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.container img {
+  width: 15%;
+  max-width: 100%;
+}
+
+.slider-container {
+  flex-grow: 1;
+}
+
 
 /* Header styles */
 .header {
