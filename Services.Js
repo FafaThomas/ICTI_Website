@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardWidth = cards[0].offsetWidth;
   const totalCards = cards.length;
   let currentSlide = 0;
-  // Remove the autoSlideInterval variable
 
   function slideToNext() {
     currentSlide = (currentSlide + 1) % totalCards;
@@ -12,14 +11,39 @@ document.addEventListener("DOMContentLoaded", function () {
     cardSlider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
   }
 
-  // Remove the startAutoSlide and stopAutoSlide functions
+  function slideToPrevious() {
+    currentSlide = (currentSlide - 1 + totalCards) % totalCards;
+    cardSlider.style.transition = "transform 0.5s ease";
+    cardSlider.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+  }
 
-  // Remove the startAutoSlide() function call
+  cardSlider.addEventListener("wheel", (event) => {
+    event.preventDefault(); // Prevent the default scrolling behavior
+    if (event.deltaY > 0) {
+      // Scrolling down, move to the next card
+      slideToNext();
+    } else if (event.deltaY < 0) {
+      // Scrolling up, move to the previous card
+      slideToPrevious();
+    }
+  });
 
   // Add event listeners for mouseover and mouseout on each card (if you still want these)
-  // You can leave these event listeners if you want to pause the sliding when hovering over a card
-  // cards.forEach((card) => {
-  //   card.addEventListener("mouseover", stopAutoSlide);
-  //   card.addEventListener("mouseout", startAutoSlide);
-  // });
+  cards.forEach((card) => {
+    card.addEventListener("mouseover", () => {
+      cardSlider.removeEventListener("wheel");
+    });
+    card.addEventListener("mouseout", () => {
+      cardSlider.addEventListener("wheel", (event) => {
+        event.preventDefault(); // Prevent the default scrolling behavior
+        if (event.deltaY > 0) {
+          // Scrolling down, move to the next card
+          slideToNext();
+        } else if (event.deltaY < 0) {
+          // Scrolling up, move to the previous card
+          slideToPrevious();
+        }
+      });
+    });
+  });
 });
