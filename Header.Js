@@ -5,6 +5,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial header height
   let headerHeight = header.clientHeight;
 
+  // Function to scroll to a section by its ID with an additional offset
+  function scrollToSectionWithOffset(sectionId, offset) {
+    const section = document.querySelector(sectionId);
+    window.scrollTo({
+      top: section.offsetTop + offset,
+      behavior: "smooth",
+    });
+  }
+
   // Add an event listener for scroll events
   window.addEventListener("scroll", () => {
     // Check the scroll position
@@ -60,18 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const dbtn = document.querySelector(".dbtn");
 
-  // Function to scroll to a section by its ID
-  function scrollToSection(sectionId) {
-    const section = document.querySelector(sectionId);
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-
-  // Add a click event listener to the .dbtn element
-  dbtn.addEventListener("click", () => {
-    // Scroll to the #contact section smoothly
-    scrollToSection("#contact");
-  });
-
   // Hamburger menu
   const hamburgerBtn = document.querySelector(".hamburger-btn");
   const mobileburgerBtn = document.querySelector(".mobileburger-btn");
@@ -119,35 +116,28 @@ document.addEventListener("DOMContentLoaded", function () {
     headerElement.classList.remove("smooth-transition");
   }, 10);
 
-  // Function to scroll to a section by its ID
-  function scrollToSection(sectionId) {
-    const section = document.querySelector(sectionId);
-    section.scrollIntoView({ behavior: "smooth" });
-  }
+  // Smooth scrolling for navigation links with custom offsets
+  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
 
-  // Add event listeners to the menu items for smooth scrolling
-  const productsMenuItem = document.querySelector(".nav-links li:nth-child(1) a");
-  const servicesMenuItem = document.querySelector(".nav-links li:nth-child(2) a");
-  const aboutMenuItem = document.querySelector(".nav-links li:nth-child(3) a");
-  const partnersMenuItem = document.querySelector(".nav-links li:nth-child(4) a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-  productsMenuItem.addEventListener("click", function (event) {
-    event.preventDefault();
-    scrollToSection("#products");
-  });
+      const targetId = this.getAttribute("href").substring(1); // Get the target section ID
+      let offset = 0; // Default offset
 
-  servicesMenuItem.addEventListener("click", function (event) {
-    event.preventDefault();
-    scrollToSection("#services");
-  });
+      // Use a switch-case statement to set different offsets for specific sections
+      switch (targetId) {
+        case "products":
+          offset = 750; // Set the offset for the #products section
+          break;
+        // Add more cases for other sections with custom offsets if needed
+        default:
+          offset = 0; // Default offset for other sections
+          break;
+      }
 
-  aboutMenuItem.addEventListener("click", function (event) {
-    event.preventDefault();
-    scrollToSection("#about");
-  });
-
-  partnersMenuItem.addEventListener("click", function (event) {
-    event.preventDefault();
-    scrollToSection("#partners");
+      scrollToSectionWithOffset(`#${targetId}`, offset);
+    });
   });
 });
