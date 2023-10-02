@@ -200,13 +200,17 @@ height: 100%;
   display: inline-flex;
   margin-top: 10px;
   margin-left: 20px;
-  
+  user-select: none;
+    -webkit-user-select: none; /* For Safari and older versions of Chrome */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .nav-links a:hover {
@@ -492,10 +496,7 @@ height: 100%;
 
   .nav-links li{
     padding-top: 5px;
-    user-select: none;
-    -webkit-user-select: none; /* For Safari and older versions of Chrome */
-    -moz-user-select: none; /* For Firefox */
-    -ms-user-select: none; /* For Internet Explorer/Edge */
+    
   }
 
   .nav-links li:hover{

@@ -60,11 +60,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const dbtn = document.querySelector(".dbtn");
 
+  // Function to scroll to a section by its ID
+  function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+
   // Add a click event listener to the .dbtn element
   dbtn.addEventListener("click", () => {
     // Scroll to the #contact section smoothly
-    const contactSection = document.querySelector("#contact");
-    contactSection.scrollIntoView({ behavior: "smooth" });
+    scrollToSection("#contact");
   });
 
   // Hamburger menu
@@ -114,4 +119,35 @@ document.addEventListener("DOMContentLoaded", function () {
     headerElement.classList.remove("smooth-transition");
   }, 10);
 
+  // Function to scroll to a section by its ID
+  function scrollToSection(sectionId) {
+    const section = document.querySelector(sectionId);
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+
+  // Add event listeners to the menu items for smooth scrolling
+  const productsMenuItem = document.querySelector(".nav-links li:nth-child(1) a");
+  const servicesMenuItem = document.querySelector(".nav-links li:nth-child(2) a");
+  const aboutMenuItem = document.querySelector(".nav-links li:nth-child(3) a");
+  const partnersMenuItem = document.querySelector(".nav-links li:nth-child(4) a");
+
+  productsMenuItem.addEventListener("click", function (event) {
+    event.preventDefault();
+    scrollToSection("#products");
+  });
+
+  servicesMenuItem.addEventListener("click", function (event) {
+    event.preventDefault();
+    scrollToSection("#services");
+  });
+
+  aboutMenuItem.addEventListener("click", function (event) {
+    event.preventDefault();
+    scrollToSection("#about");
+  });
+
+  partnersMenuItem.addEventListener("click", function (event) {
+    event.preventDefault();
+    scrollToSection("#partners");
+  });
 });
