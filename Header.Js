@@ -68,7 +68,42 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 750); // Adjust the delay (in milliseconds) to control when the animation starts
 
   const dbtn = document.querySelector(".dbtn");
+  dbtn.addEventListener("click", function (e) {
+    e.preventDefault();
 
+    const targetId = this.getAttribute("href").substring(1); // Get the target section ID
+
+    scrollToSectionWithOffset(`#${targetId}`, 0);
+  });
+
+    const logo = document.querySelector(".CompanyLogo");
+
+  let isMouseDown = false;
+
+  logo.addEventListener("mousedown", () => {
+    isMouseDown = true;
+    logo.classList.add('shrink');
+  });
+
+  document.addEventListener("mouseup", () => {
+    if (isMouseDown) {
+      logo.classList.remove('shrink');
+      isMouseDown = false;
+    }
+  });
+
+  logo.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Scroll to the top of the page
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // This makes the scroll smooth
+    });
+  });
+
+
+  
   // Hamburger menu
   const hamburgerBtn = document.querySelector(".hamburger-btn");
   const mobileburgerBtn = document.querySelector(".mobileburger-btn");
@@ -129,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Use a switch-case statement to set different offsets for specific sections
       switch (targetId) {
         case "products":
-          offset = 750; // Set the offset for the #products section
+          offset = -20; // Set the offset for the #products section
           break;
         // Add more cases for other sections with custom offsets if needed
         default:
@@ -140,4 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollToSectionWithOffset(`#${targetId}`, offset);
     });
   });
+
+  
 });

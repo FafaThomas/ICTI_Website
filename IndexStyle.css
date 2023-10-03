@@ -22,7 +22,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -192,6 +192,27 @@ body {
 height: 100%;
 }
 
+.logo {
+  position: relative;
+  transition: transform 0.2s, cursor 0.2s;
+}
+
+.CompanyLogo {
+  width: 100px; /* Set your initial width here */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Increase the size on hover */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+}
+
+.shrink {
+  transform: scale(0.9); /* Shrink the logo */
+}
+
+
+
 .nav-links {
   list-style: none;
 }
@@ -201,21 +222,28 @@ height: 100%;
   margin-top: 10px;
   margin-left: 20px;
   user-select: none;
-    -webkit-user-select: none; /* For Safari and older versions of Chrome */
-    -moz-user-select: none; /* For Firefox */
-    -ms-user-select: none; /* For Internet Explorer/Edge */
+  -webkit-user-select: none; /* For Safari and older versions of Chrome */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+  transition: transform 0.3s; /* Add a transition for the transform property */
 }
 
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s;
   cursor: pointer;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #ccc;
+  transform: scale(1.1); /* Enlarge the link on hover */
 }
+
+.nav-links a:active {
+  transform: scale(0.9); /* Shrink the link when clicked (on mouse down) */
+}
+
 
 
 
@@ -310,29 +338,71 @@ height: 100%;
   cursor: pointer;
 }
 
+.DownLogo {
+  scale: 0.2;
+  padding-top: 550px;
+  display: block; /* Make the image a block-level element */
+  margin: 0 auto; /* Center the image horizontally by setting left and right margins to auto */
+}
+
 /* Section styles */
 .section {
   padding: 100px 0;
 }
 
 #products.section {
-  padding-top: 700px;
+  margin-top: -460px;
 }
 
+
 .section-heading {
+  display: flex;
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin-bottom: 10px;
+  
+}
+
+.Product {
+  width: 40px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+  margin-bottom: 20px;
+}
+
+.Service {
+  width: 40px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+  margin-bottom: 20px;
+}
+
+/* Optional: You can further style the h2 if needed */
+.section-heading h2 {
+  font-size: 30px; /* Adjust the font size as needed */
   text-align: center;
-  margin-bottom: 30px;
 }
 
 .slider-container {
   overflow: hidden;
 }
 
-.Left_Service_Button,
-.Right_Service_Button {
+.Left_Product_Button,
+.Right_Product_Button {
   cursor: pointer;
 }
 
+.Left_Product_Button:hover,
+.Right_Product_Button:hover {
+  transform: scale(1.1); /* Enlarge the button on hover */
+  transition: transform 0.2s;
+}
+
+.Left_Product_Button:active,
+.Right_Product_Button:active {
+  transform: scale(0.9); /* Shrink the button on mouse down */
+  transition: transform 0.2s; /* Add a transition for a smooth effect */
+}
 
 .card-slider {
   display: flex;
@@ -349,7 +419,8 @@ height: 100%;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  text-align: center;
+  text-align: center;perspective: 1000px; /* Add perspective for 3D effect */
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
@@ -375,6 +446,148 @@ height: 100%;
 .card:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+
+/* CSS for the expanded card overlay */
+.expanded-card-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* CSS for the expanded card */
+.expanded-card {
+  width: 90%; /* Set the width to 300% of its original size */
+  height: 90vh; /* Set the height to 90% of the viewport height */
+  transform: translate(-50%, -50%); /* Center the card on the screen */
+  top: 50%;
+  left: 50%;
+  max-width: none; /* Remove the max-width limit */
+  max-height: none; /* Remove the max-height limit */
+  background-color: #fff;
+  overflow: auto; /* Enable scrolling if content overflows */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  position: fixed; /* Use fixed positioning to cover the entire screen */
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+.Expanded {
+  display: none;
+}
+
+.expanded-card:hover {
+  transform: translate(-50%, -50%); 
+}
+
+
+
+/* Add this CSS code to your stylesheet or in a <style> element within your HTML file */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create a responsive grid with columns */
+  gap: 20px; /* Add spacing between cards */
+  justify-content: center; /* Center the columns horizontally */
+  
+}
+
+.CardOpacityGray {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  border-radius: 10px; /* Add rounded corners to the overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Add a transition for opacity */
+}
+
+.service-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  position: relative;
+}
+
+.service1 {
+  background-image: url('Images/Partners.png'); /* Replace 'service1.png' with the path to your image */
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center 10px;
+}
+
+.service-card h3 {
+  font-size: 5px;
+  margin-top: 180px;
+}
+
+.service-card p {
+  font-size: 5px;
+}
+
+/* Style the button */
+.InqBtn {
+  user-select: none;
+  -webkit-user-select: none; /* For Safari and Chrome */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Microsoft Edge */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
+  transition: opacity 0.3s ease; /* Add a transition for opacity */
+}
+
+#Service.InqBtn{
+  opacity: 0; /* Initially hide the button */
+}
+
+
+
+#Product.InqBtn{
+  translate: 500%;
+}
+
+/* Show the button on hover */
+.service-card:hover #Service.InqBtn {
+  opacity: 1;
+}
+
+.service-card:hover .CardOpacityGray {
+  opacity: .4; /* Show the overlay when hovering the card */
+}
+
+/* Add hover effect */
+.InqBtn:hover {
+  background-color: #555;
+}
+
+.InqBtn:active {
+  transform: translate(-50%, -50%) scale(0.95); /* Shrink the button when clicked */
+  transition: transform 0.2s ease; /* Add a transition for the transform property */
 }
 
 .service-card,
