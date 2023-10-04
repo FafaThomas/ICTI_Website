@@ -481,9 +481,35 @@ height: 100%;
   z-index: 1001; /* Ensure it's above other content */
 }
 
-.Expanded {
+.Expanded{
   display: none;
 }
+
+.Expanded-Content {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Create a responsive grid with minimum item width of 250px */
+  gap: 20px; /* Gap between grid items */
+}
+
+.Product-Item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.Product-Item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+
+
 
 .expanded-card:hover {
   transform: translate(-50%, -50%); 
@@ -512,7 +538,7 @@ height: 100%;
   transition: opacity 0.3s ease; /* Add a transition for opacity */
 }
 
-.service-card {
+.service-card,.Product-Item-Card {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -524,16 +550,18 @@ height: 100%;
   position: relative;
 }
 
-.service1 {
-  background-image: url('Images/Partners.png'); /* Replace 'service1.png' with the path to your image */
-  background-size:contain;
-  background-repeat: no-repeat;
-  background-position: center 10px;
+.service-card img,.Product-Item-Card img {
+  width: 100%;
+  height: 150px;
+  object-fit:contain;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  align-self: center;
 }
 
-.service-card h3 {
+.service-card h3,.Product-Item-Card h3 {
   font-size: 5px;
-  margin-top: 180px;
+  margin-top: 10px;
 }
 
 .service-card p {
@@ -558,25 +586,16 @@ height: 100%;
   border-radius: 5px;
   cursor: pointer;
   z-index: 3;
+  opacity: 0; /* Initially hide the button */
   transition: opacity 0.3s ease; /* Add a transition for opacity */
 }
 
-#Service.InqBtn{
-  opacity: 0; /* Initially hide the button */
-}
-
-
-
-#Product.InqBtn{
-  translate: 500%;
-}
-
 /* Show the button on hover */
-.service-card:hover #Service.InqBtn {
+.service-card:hover .InqBtn,.Product-Item-Card:hover .InqBtn {
   opacity: 1;
 }
 
-.service-card:hover .CardOpacityGray {
+.service-card:hover .CardOpacityGray,.Product-Item-Card:hover .CardOpacityGray {
   opacity: .4; /* Show the overlay when hovering the card */
 }
 
@@ -624,18 +643,96 @@ height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  
 }
 
 .about-content img {
   width: 300px;
   height: auto;
-  margin-right: 30px;
+  
 }
 
 .about-content p {
   font-size: 16px;
   color: #777;
 }
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px; /* Gap between grid items */
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 10px; /* Gap between grid items */
+}
+
+.partners-card {
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right; /* Center both horizontally and vertically */
+}
+
+.large-card {
+  grid-column: span 2; /* This card spans all 3 columns */
+}
+
+.large-card img{
+  height: auto;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.collage-card {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Two columns, one for stacked images and one for the single image */
+  gap: 10px;
+}
+
+.stacked-images {
+  display: flex;
+  flex-direction: column; /* Stack the images vertically */
+  justify-content: center;
+  align-items: center;
+}
+
+.stacked-image{
+  height: auto; /* Maintains the aspect ratio while resizing */
+  width: 150px; /* Set your desired width here */
+  margin: 0;
+  padding: 0;
+}
+
+.single-image-collage{
+  height: auto; /* Maintains the aspect ratio while resizing */
+  width: 250px; /* Set your desired width here */
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the images */
+.partners-card img {
+  height: auto;
+  width: 70%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center horizontally */
+}
+
+.partners-card p{
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+
 
 /* Contact section styles */
 .contact-form {

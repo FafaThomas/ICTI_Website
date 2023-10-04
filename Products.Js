@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       // If Non-Expanded content is visible, hide it and show Expanded content
       nonExpandedContent.style.display = "none";
-      expandedContent.style.display = "block";
+      expandedContent.style.display = "block  ";
     }
   }
 });
