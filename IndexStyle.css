@@ -278,7 +278,7 @@ height: 100%;
 .dbtn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #001E5E;
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
@@ -294,7 +294,7 @@ height: 100%;
 }
 
 .dbtn:hover {
-  background-color: #555;
+  background-color: #FF6600;
   cursor: pointer;
 }
 
@@ -343,7 +343,14 @@ height: 100%;
   padding-top: 550px;
   display: block; /* Make the image a block-level element */
   margin: 0 auto; /* Center the image horizontally by setting left and right margins to auto */
+  transition: transform 0.3s ease;
 }
+
+.DownLogo:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 
 /* Section styles */
 .section {
@@ -571,7 +578,7 @@ height: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #333;
+  background-color: #001E5E;
   color: #fff;
   text-decoration: none;
   padding: 10px 20px;
@@ -594,7 +601,7 @@ height: 100%;
 
 /* Add hover effect */
 .InqBtn:hover {
-  background-color: #555;
+  background-color: #FF6600;
 }
 
 .InqBtn:active {
@@ -631,25 +638,38 @@ height: 100%;
   color: #777;
 }
 
-/* About section styles */
 .about-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  
+  display: inline-flex;
+  flex-direction: row; /* Set the flex direction to row (horizontal) */
+  justify-content: space-between; /* Add space between the items */
+  align-items: flex-start; /* Align items vertically in the center */
+  width: 100%; /* Ensure the container spans the full width of its parent */
+  max-width: 1000px; /* Adjust the maximum width as needed */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.about_text {
+  flex: 1; /* Allow the text section to expand and take up available space */
+  padding: 20px; /* Add padding to create spacing */
+  margin-left: -13%;
+  margin-top: -4%;
 }
 
 .about-content img {
-  width: 300px;
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
   height: auto;
+  width: 600px;
+  margin: 0;
+  margin-right: -16%;
+  padding: 0;
   
 }
 
 .about-content p {
   font-size: 16px;
-  color: #777;
+  color: #1a1a1a;
 }
+
 
 .partners-grid {
   display: grid;
@@ -664,7 +684,7 @@ height: 100%;
 }
 
 .partners-card {
-  padding: 20px;
+  padding: 0px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -759,7 +779,7 @@ height: 100%;
 }
 
 #map {
-  width: 600px;
+  width: 550px;
   height: 200px;
 }
 
@@ -805,7 +825,7 @@ height: 100%;
 }
 
 .Info_Icon {
-  width: 10px; /* Adjust the width as needed */
+  width: 7px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Add some spacing between the image and text */
   padding-bottom: 20px;

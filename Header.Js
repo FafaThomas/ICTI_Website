@@ -174,4 +174,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+    // Add an event listener to the image element
+  document.getElementById('scrollToProducts').addEventListener('click', function() {
+    // Smooth scroll to the #products section
+    document.querySelector('#products').scrollIntoView({
+      behavior: 'smooth'
+    });
+    
+    // Shrink the image after clicking (optional)
+    this.style.transform = 'scale(0.9)';
+  });
+
+
 });
