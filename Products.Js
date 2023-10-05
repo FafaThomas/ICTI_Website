@@ -87,4 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       expandedContent.style.display = "block  ";
     }
   }
+
+  
+
 });

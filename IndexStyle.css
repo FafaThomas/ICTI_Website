@@ -400,7 +400,7 @@ height: 100%;
 .card-slider {
   display: flex;
   transition: transform 0.5s ease;
-  width: calc(300px * 7);
+  width: calc(300px * 8);
   overflow: hidden; /* Hide any content overflow */
 }
 
@@ -727,18 +727,167 @@ height: 100%;
 
 
 
+.Bubble-Grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
+  gap: 0px; /* Adjust the gap between items as needed */
+  padding: 0;
+  margin: 0;
+}
+
+.Bubble {
+  text-align: center; /* Center the content inside each bubble */
+}
+
+.Bubble img {
+  max-width: 100%; /* Ensure images fit within their containers */
+  height: auto;
+  width: 50%;
+}
+
+.Bubble-2-columns {
+  grid-column: span 2; /* Make this element span two columns */
+}
+
+.Bubble-2-rows {
+  grid-row: span 2; /* Make this element span two rows */
+}
+
+.Bubble-2{
+  grid-column: span 2; /* Make this element span two columns */
+  grid-row: span 2; /* Make this element span two rows */
+}
+
+#map {
+  width: 600px;
+  height: 200px;
+}
+
+.tab {
+  margin-left: 123px; /* Adjust the value to control the indentation */
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-flex;
+  justify-content:flex-start;
+  align-items: flex-start;
+}
+
+
+
+
 /* Contact section styles */
 .contact-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
   margin: 0 auto;
+  width: 500px;
 }
 
+.contact-info {
+  display: flex;
+  flex-direction: column; /* Make it a flex column */
+  align-items: flex-start; /* Align children to the left */
+  width: fit-content;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.Info {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.Info_Icon {
+  width: 10px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+  padding-bottom: 20px;
+}
+
+.Info h4{
+  margin: 0;
+}
+
+.contact-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px; /* Adjust the gap as needed */
+  margin-right: 20px;
+  padding-right: 10px;
+  width: 1200px;
+}
+
+.contact-buttons {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr; /* Button takes 1.5 columns, socials take 0.5 columns */
+  gap: 20px; /* Adjust the gap between elements as needed */
+  align-items: center; /* Center elements vertically */
+}
+
+.submitbtn {
+  grid-column: span 1.5; /* Make the button span 1.5 columns */
+  /* Add other CSS styles for the button as needed */
+}
+
+.socials_tab {
+  display: grid;
+  padding: 0;
+  margin: 0;
+}
+
+.socials_tab p {
+  font-weight: bold; /* Make it bold */
+  color: rgb(36, 36, 36); /* Set the text color to gray */
+  font-size: 10px; /* Adjust the font size as needed */
+  padding: 0;
+  margin: 0;
+}
+
+
+.socials_icon {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+  gap: 5px; /* Adjust the gap as needed */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 70px;
+  /* Add other CSS styles as needed */
+}
+
+.socials_icon a {
+  display: inline-block;
+  width: 30px !important; /* Make the <a> element the same width as the <img> */
+  height: 30px !important; /* Make the <a> element the same height as the <img> */
+  padding: 2px; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.Socials {
+  width: 70px !important;
+  height: auto; /* Adjust the height to your preferred size */
+  max-width: 100%; /* Ensure the width doesn't exceed its container */
+  max-height: 100%; /* Ensure the height doesn't exceed its container */
+}
+
+
+
+
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select { /* Add the select element */
   padding: 10px;
   margin-bottom: 20px;
+  width: 100%; /* Make the input, textarea, and select full width */
+  border: 1px solid #ccc; /* Add a border to the input, textarea, and select */
+  border-radius: 5px;
 }
 
 .contact-form button {
@@ -749,11 +898,14 @@ height: 100%;
   border-radius: 5px;
   transition: background-color 0.3s;
   cursor: pointer;
+  width: 100%; /* Make the button full width */
 }
+
 
 .contact-form button:hover {
   background-color: #555;
 }
+
 
 /* Footer styles */
 .footer {

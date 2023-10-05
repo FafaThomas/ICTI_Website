@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollToSectionWithOffset(`#${targetId}`, 0);
   });
 
-    const logo = document.querySelector(".CompanyLogo");
+  const logo = document.querySelector(".CompanyLogo");
 
   let isMouseDown = false;
 
@@ -102,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
-  
   // Hamburger menu
   const hamburgerBtn = document.querySelector(".hamburger-btn");
   const mobileburgerBtn = document.querySelector(".mobileburger-btn");
@@ -176,5 +174,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  
 });
