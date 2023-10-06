@@ -370,11 +370,18 @@ height: 100%;
   
 }
 
-.Product, .Service, .About, .Partner, .Client, .Contact {
+.Product, .Service, .About, .Partner, .Client  {
   width: 40px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
   margin-right: 10px; /* Add some spacing between the image and text */
   margin-bottom: 20px;
+}
+
+.Contact {
+  width: 30px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+  margin-bottom: 10px;
 }
 
 /* Optional: You can further style the h2 if needed */
@@ -822,13 +829,21 @@ height: 100%;
   display: flex;
   padding: 0;
   margin: 0;
+  padding-bottom: 5px;
 }
 
 .Info_Icon {
-  width: 7px; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 20px !important; /* Adjust the width as needed */
+  height: auto !important; /* Maintain aspect ratio */
   margin-right: 10px; /* Add some spacing between the image and text */
-  padding-bottom: 20px;
+  padding-bottom: 5px;
+}
+
+.Double_Icon {
+  width: 27px !important; /* Adjust the width as needed */
+  height: 35px !important; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some spacing between the image and text */
+  padding-bottom: 5px;
 }
 
 .Info h4{
