@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -526,6 +526,7 @@ height: 100%;
 
 /* Add this CSS code to your stylesheet or in a <style> element within your HTML file */
 .service-grid {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create a responsive grid with columns */
   gap: 20px; /* Add spacing between cards */
