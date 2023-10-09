@@ -1,44 +1,35 @@
 <?php
-// Include the PHPMailer library
-require 'PHPMailer\src\PHPMailer.php';
-
-// Configuration for your email server
-$mail = new PHPMailer;
-$mail->isSMTP();
-$mail->Host = 'smtp.live.com'; // Replace with your SMTP server
-$mail->SMTPAuth = true;
-$mail->Username = 'ICTIWebSender@outlook.com'; // Replace with your SMTP username
-$mail->Password = 'WebSenderICTI2023'; // Replace with your SMTP password
-$mail->SMTPSecure = 'tls'; // Use 'tls' or 'ssl' as appropriate
-$mail->Port = 587; // Adjust the port if needed
-
-// Sender's email address
-$mail->setFrom($_POST['email'], $_POST['name']);
-
-// Recipient email address
-$mail->addAddress('support@icontroltech.com');
-
-// Subject formatted as "name - type"
-$mail->Subject = $_POST['name'] . ' - ' . $_POST['type'];
-
-// Email body
-$mail->Body = $_POST['message'];
-
-// Try to send the email
-try {
-    if ($mail->send()) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $type = $_POST["type"];
+    $message = $_POST["message"];
+    
+    // Change the recipient email address to support@icontroltech.com
+    $to = "support@icontroltech.com";
+    
+    // Email subject as "Name - Selected Category"
+    $subject = "$name - $type";
+    
+    // Email message
+    $email_message = "Name: $name\n";
+    $email_message .= "Email: $email\n";
+    $email_message .= "Category: $type\n\n";
+    $email_message .= "Message:\n$message";
+    
+    // Additional headers
+    $headers = "From: $email";
+    
+    // Send the email
+    if (mail($to, $subject, $email_message, $headers)) {
         // Email sent successfully
-        echo json_encode(['status' => 'success']);
+        echo "Success! Your message has been sent.";
     } else {
         // Email sending failed
-        echo json_encode(['status' => 'error']);
+        echo "Error: Something went wrong. Please try again later.";
     }
-} catch (Exception $e) {
-    // An exception occurred during email sending
-    $errorMessage = $e->getMessage();
-    echo '<script>';
-    echo 'var errorMessage = "' . addslashes($errorMessage) . '";'; // Get the error message
-    echo 'alert("Email sending failed: " + errorMessage);';
-    echo '</script>';
+} else {
+    // Redirect back to the contact form if accessed directly
+    header("Location: Index.html");
 }
 ?>
