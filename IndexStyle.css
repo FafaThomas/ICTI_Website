@@ -50,14 +50,13 @@ body {
   right: 0;
   z-index: 1000;
   width: 100%;
-  
   overflow: hidden;
   transition-duration: .7s;
   transition: height 0.7s ease;
   /* Add the smooth transition class to the header */
   transition: all 0.3s ease; /* Add this line */
 }
-
+  
 
 .OpacityGray{
   position: absolute;
@@ -949,65 +948,101 @@ height: 100%;
 }
 
 
-@media screen and (max-width: 768px){
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
-  }
-  .nav-container{
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    align-items: center;
-  }
-
-  .hamburger-btn {
-    display: none;
-  }
-
-  .mobileburger-btn {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .menu-container {
-    transform: translateX(0%);
-  }
-
-  .nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .nav-links li{
-    padding-top: 5px;
-    
-  }
-
-  .nav-links li:hover{
-    cursor: pointer;
-  }
-
-
+/* Desktops */
+@media screen and (max-width: 1920px) and (max-height: 1080px) {
   .header {
-    height: 650px; /* Set the desired height for your header */
+    height: 45%;
   }
-  
 
-  .dhero{
-    opacity: 0;
-    display: none;
-    text-align: justify; /* Justify the text within the div */
-    margin-left: 30%; /* Place the div 30% to the left */
-    padding: 20px; /* Add padding for spacing */
-    transition-duration: .5s;
-    transform: translateY(0%);
+  .DownLogo {
+    padding-top: 340px;
   }
-  .mhero{
-    opacity: 1;
-    display: block;
+
+  .container{
+    padding: 20px;
   }
+
+  
+}
+
+@media screen and (max-width: 1366px) and (max-height: 768px) {
+  /* CSS rules for 1366x768 */
+}
+
+@media screen and (max-width: 1600px) and (max-height: 900px) {
+  /* CSS rules for 1600x900 */
+}
+
+@media screen and (max-width: 1536px) and (max-height: 864px) {
+  /* CSS rules for 1536x864 */
+}
+
+@media screen and (max-width: 1440px) and (max-height: 900px) {
+  /* CSS rules for 1440x900 */
+}
+
+@media screen and (max-width: 1280px) and (max-height: 720px) {
+  /* CSS rules for 1280x720 */
+}
+
+@media screen and (max-width: 1024px) and (max-height: 768px) {
+  /* CSS rules for 1024x768 */
+}
+
+/* Tablets */
+@media screen and (max-width: 1280px) and (max-height: 800px) {
+  /* CSS rules for 1280x800 */
+}
+
+@media screen and (max-width: 962px) and (max-height: 601px) {
+  /* CSS rules for 962x601 */
+}
+
+@media screen and (max-width: 810px) and (max-height: 1080px) {
+  /* CSS rules for 810x1080 */
+}
+
+@media screen and (max-width: 800px) and (max-height: 1180px) {
+  /* CSS rules for 800x1180 */
+}
+
+@media screen and (max-width: 768px) and (max-height: 1024px) {
+  /* CSS rules for 768x1024 */
+}
+
+/* Mobile */
+@media screen and (max-width: 414px) and (max-height: 896px) {
+  /* CSS rules for 414x896 */
+}
+
+@media screen and (max-width: 414px) and (max-height: 736px) {
+  /* CSS rules for 414x736 */
+}
+
+@media screen and (max-width: 393px) and (max-height: 873px) {
+  /* CSS rules for 393x873 */
+}
+
+@media screen and (max-width: 390px) and (max-height: 844px) {
+  /* CSS rules for 390x844 */
+}
+
+@media screen and (max-width: 375px) and (max-height: 812px) {
+  /* CSS rules for 375x812 */
+}
+
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  /* CSS rules for 375x667 */
+}
+
+@media screen and (max-width: 360px) and (max-height: 800px) {
+  /* CSS rules for 360x800 */
+}
+
+@media screen and (max-width: 360px) and (max-height: 640px) {
+  /* CSS rules for 360x640 */
+}
+
+@media screen and (max-width: 328px) and (max-height: 926px) {
+  /* CSS rules for 328x926 */
 }

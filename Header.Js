@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.height = `${navbar.clientHeight + 30}px`;
     } else {
       // Restore the original header height
-      header.style.height = `${headerHeight*1.15}px`;
+      header.style.height = `${headerHeight}px`;
     }
   });
 
