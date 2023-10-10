@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const cardWidth = cards[0].offsetWidth;
   const totalCards = cards.length;
   let currentSlide = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   function slideToNext() {
     if (currentSlide < totalCards - 1) {
@@ -22,19 +24,45 @@ document.addEventListener("DOMContentLoaded", function () {
   function slideTo(index) {
     currentSlide = index;
     const maxTranslateX = -(totalCards - 1) * cardWidth;
-    const translateX = Math.min(0, Math.max(maxTranslateX, -currentSlide * cardWidth * 0.7));
+    let factor = 0.7; // Default factor value
+
+    if (window.innerWidth <= 1024) {
+      factor = 0.8;
+    } else if (window.innerWidth >= 1200) {
+      factor = 0.65;
+    }
+
+    const translateX = Math.min(
+      0,
+      Math.max(maxTranslateX, -currentSlide * cardWidth * factor)
+    );
     cardSlider.style.transition = "transform 0.5s ease";
     cardSlider.style.transform = `translateX(${translateX}px)`;
   }
 
+
+
+
   cardSlider.addEventListener("wheel", (event) => {
-    event.preventDefault();
     if (event.deltaY > 0) {
-      slideToNext();
+      if(currentSlide === totalCards - 1){
+        slideToNext();
+      }else{
+        event.preventDefault();
+        slideToNext();
+      }
     } else if (event.deltaY < 0) {
-      slideToPrevious();
+      if(currentSlide === 0){
+        slideToPrevious();
+      }else{
+        event.preventDefault();
+        slideToPrevious();
+      }
+      
     }
   });
+
+  
 
   const leftButton = document.querySelector(".Left_Product_Button");
   const rightButton = document.querySelector(".Right_Product_Button");
@@ -55,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Function to expand a card
   function expandCard(index) {
     const card = cards[index];
     const cardClone = card.cloneNode(true);
@@ -65,29 +92,42 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(cardClone);
     document.body.appendChild(overlay);
 
-    // Add a click event listener to close the expanded card
     overlay.addEventListener("click", () => {
       document.body.removeChild(overlay);
     });
   }
 
-  // Function to toggle card content
   function toggleCardContent(index) {
     const card = cards[index];
     const nonExpandedContent = card.querySelector(".Non-Expanded");
     const expandedContent = card.querySelector(".Expanded");
 
     if (nonExpandedContent.style.display === "none") {
-      // If Non-Expanded content is hidden, show it and hide Expanded content
       nonExpandedContent.style.display = "block";
       expandedContent.style.display = "none";
     } else {
-      // If Non-Expanded content is visible, hide it and show Expanded content
       nonExpandedContent.style.display = "none";
-      expandedContent.style.display = "block  ";
+      expandedContent.style.display = "block";
     }
   }
 
-  
+  // Add touch event listeners to enable touch screen scrolling
+  cardSlider.addEventListener("touchstart", (event) => {
+    touchStartX = event.touches[0].clientX;
+  });
 
+  cardSlider.addEventListener("touchmove", (event) => {
+    touchEndX = event.touches[0].clientX;
+  });
+
+  cardSlider.addEventListener("touchend", () => {
+    const touchDiff = touchStartX - touchEndX;
+    if (touchDiff > 0) {
+      // Swiped left (next slide)
+      slideToNext();
+    } else if (touchDiff < 0) {
+      // Swiped right (previous slide)
+      slideToPrevious();
+    }
+  });
 });

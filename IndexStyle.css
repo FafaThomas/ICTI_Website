@@ -782,7 +782,7 @@ height: 100%;
 }
 
 #map {
-  width: 550px;
+  width: 100%;
   height: 200px;
 }
 
@@ -847,7 +847,7 @@ height: 100%;
 }
 
 .contact-area {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px; /* Adjust the gap as needed */
@@ -945,11 +945,12 @@ height: 100%;
   color: #fff;
   padding: 20px;
   text-align: center;
+  width: 100%;
 }
 
 
 /* Desktops */
-@media screen and (max-width: 1920px) and (max-height: 1080px) {
+@media screen and (min-width: 1919px) and (max-width: 2000px) {
   .header {
     height: 45%;
   }
@@ -962,31 +963,153 @@ height: 100%;
     padding: 20px;
   }
 
+  .about_text {
+    margin-left: -40%;
+    margin-top: 0%;
+  }
   
+  .about-content img {
+    margin-top: -5%;
+    margin-right: -45%;
+    padding: 0;
+    
+  }
 }
 
-@media screen and (max-width: 1366px) and (max-height: 768px) {
-  /* CSS rules for 1366x768 */
-}
-
-@media screen and (max-width: 1600px) and (max-height: 900px) {
+@media screen and (min-width: 1580px) and (max-width: 1800px) {
   /* CSS rules for 1600x900 */
+  .header {
+    height: 55%;
+  }
+
+  .DownLogo {
+    padding-top: 600px;
+  }
+  
+  .about_text {
+    margin-left: -25%;
+    margin-top: 0%;
+  }
+  
+  .about-content img {
+    margin-top: -5%;
+    margin-right: -30%;
+    padding: 0;
+    
+  }
+
 }
 
-@media screen and (max-width: 1536px) and (max-height: 864px) {
+@media screen and (min-width: 1500px) and (max-width: 1579px) {
   /* CSS rules for 1536x864 */
+  .header {
+    height: 58%;
+  }
+
+  .about-content img {
+    margin-top: -5%;
+    margin-right: -25%;
+    padding: 0;
+    
+  }
+
 }
 
-@media screen and (max-width: 1440px) and (max-height: 900px) {
+@media screen and (min-width: 1400px) and (max-width: 1499px) {
   /* CSS rules for 1440x900 */
+  .header {
+    height: 60%;
+  }
+
+  .DownLogo {
+    padding-top: 600px;
+  }
+  
+  .about_text {
+    margin-left: -20%;
+    margin-top: 0%;
+  }
+
+  .about-content img {
+    margin-top: -5%;
+    margin-right: -20%;
+    padding: 0;
+    
+  }
 }
 
-@media screen and (max-width: 1280px) and (max-height: 720px) {
+@media screen and (min-width: 1300px) and (max-width: 1399){
+  /* CSS rules for 1366x768 */
+  .header {
+    height: 70%;
+  }
+
+  .DownLogo {
+    padding-top: 650px;
+  }
+  
+  .about_text {
+    margin-left: -15%;
+    margin-top: 0%;
+  }
+  
+  .about-content img {
+    margin-top: -5%;
+    margin-right: -18%;
+    padding: 0;
+    
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1299px) {
   /* CSS rules for 1280x720 */
+  .header {
+    height: 75%;
+  }
+
+  .DownLogo {
+    padding-top: 650px;
+  }
+  
+  .about_text {
+    margin-left: -10%;
+    margin-top: 0%;
+  }
+
+  .about-content img {
+    margin-top: 0%;
+    margin-right: -13%;
+    padding: 0;
+    
+  }
 }
 
-@media screen and (max-width: 1024px) and (max-height: 768px) {
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
   /* CSS rules for 1024x768 */
+  .header {
+    height: 85%;
+  }
+
+  .DownLogo {
+    padding-top: 730px;
+  }
+  
+  .about_text {
+    margin-left: 0%;
+    margin-top: 0%;
+  }
+
+  .about-content{
+    overflow-x: hidden;
+  }
+  .about-content img {
+    margin-top: 0%;
+    margin-right: -15%;
+    padding: 0;
+    
+  }
+
+  
 }
 
 /* Tablets */
