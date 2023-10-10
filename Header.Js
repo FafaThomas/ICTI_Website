@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add an event listener for scroll events
   window.addEventListener("scroll", () => {
     // Check the scroll position
-    if (window.scrollY > navbar.clientHeight + 150) {
+    if (window.scrollY > navbar.clientHeight) {
       // Set the smaller header height
       header.style.height = `${navbar.clientHeight + 30}px`;
     } else {

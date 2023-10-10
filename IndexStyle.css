@@ -952,7 +952,7 @@ height: 100%;
 /* Desktops */
 @media screen and (min-width: 1919px) and (max-width: 2000px) {
   .header {
-    height: 45%;
+    height: 50%;
   }
 
   .DownLogo {
