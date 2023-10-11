@@ -491,11 +491,17 @@ height: 100%;
   display: none;
 }
 
+.Expanded-Category{
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 40px;
+}
+
 .Expanded-Content {
   padding-top: 20px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Create a responsive grid with minimum item width of 250px */
-  gap: 20px; /* Gap between grid items */
+  gap: 50px; /* Gap between grid items */
 }
 
 .Product-Item {
@@ -555,6 +561,10 @@ height: 100%;
   flex-direction: column;
   margin: 0px auto;
   position: relative;
+}
+
+.Product-Item-Card {
+  width: 300px;
 }
 
 .service-card img,.Product-Item-Card img {
@@ -680,7 +690,7 @@ height: 100%;
 
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(4, 1fr); /* 3 columns */
   gap: 10px; /* Gap between grid items */
   width: 100%;
 }
@@ -695,7 +705,7 @@ height: 100%;
 }
 
 .large-card {
-  grid-column: span 2; /* This card spans all 3 columns */
+  grid-column: span 1; /* This card spans all 3 columns */
 }
 
 .large-card img{
@@ -705,31 +715,12 @@ height: 100%;
   padding: 0;
 }
 
-.collage-card {
-  display: grid;
-  grid-template-columns: 1fr auto; /* Two columns, one for stacked images and one for the single image */
-  gap: 10px;
-}
-
-.stacked-images {
-  display: flex;
-  flex-direction: column; /* Stack the images vertically */
-  justify-content: center;
-  align-items: center;
-}
-
-.stacked-image{
-  height: auto; /* Maintains the aspect ratio while resizing */
-  width: 150px; /* Set your desired width here */
-  margin: 0;
-  padding: 0;
-}
-
 .single-image-collage{
   height: auto; /* Maintains the aspect ratio while resizing */
-  width: 250px; /* Set your desired width here */
+  width: 100%; /* Set your desired width here */
   margin: 0;
   padding: 0;
+  grid-row: span 2;
 }
 
 /* Style the images */
@@ -952,11 +943,13 @@ height: 100%;
 /* Desktops */
 @media screen and (min-width: 1919px) and (max-width: 2000px) {
   .header {
-    height: 50%;
+    height: 42%;
   }
 
   .DownLogo {
-    padding-top: 340px;
+    margin-top: -10px;
+    margin-bottom: 60px;
+    padding-top: 215px;
   }
 
   .container{
