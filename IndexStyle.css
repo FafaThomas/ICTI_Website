@@ -20,7 +20,7 @@ body {
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -754,19 +754,27 @@ height: 100%;
   font-weight: bold;
 }
 
-
-
-.Bubble-Grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Adjust the number of columns as needed */
-  gap: 0px; /* Adjust the gap between items as needed */
-  padding: 0;
-  margin: 0;
+/* Add your CSS for styling the container, bubbles, and animation here */
+.Slider_Container {
   width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bubble-slider {
+  display: flex;
+  transition: transform 1s ease;
 }
 
 .Bubble {
-  text-align: center; /* Center the content inside each bubble */
+  flex: 0 0 100px;
+  margin: 0 10px;
+  transition: transform 0.5s ease;
+}
+
+/* Add styles for enlarging the middle bubble */
+.Bubble.active {
+  transform: scale(1.2);
 }
 
 .Bubble img {
@@ -966,10 +974,6 @@ height: 100%;
     margin-top: -10px;
     margin-bottom: 60px;
     padding-top: 215px;
-  }
-
-  .container{
-    padding: 20px;
   }
 
   .about_text {
