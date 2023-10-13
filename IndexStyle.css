@@ -360,6 +360,13 @@ height: 100%;
   margin-top: -460px;
 }
 
+#partners.section{
+  margin-top: -200px;
+}
+
+#client_project.section{
+  margin-top: -200px;
+}
 
 .section-heading {
   display: flex;
@@ -720,6 +727,11 @@ height: 100%;
   align-items: right; /* Center both horizontally and vertically */
 }
 
+.partners-card:hover {
+  transform: scale(1.02);
+  transition-duration: .5s;
+}
+
 .large-card {
   grid-column: span 1; /* This card spans all 3 columns */
 }
@@ -754,46 +766,36 @@ height: 100%;
   font-weight: bold;
 }
 
-/* Add your CSS for styling the container, bubbles, and animation here */
-.Slider_Container {
-  width: 100%;
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.clientLogos {
   overflow: hidden;
-  position: relative;
+  white-space: nowrap;
 }
 
-.bubble-slider {
-  display: flex;
-  transition: transform 1s ease;
+.Client-Slide {
+  display: inline-block;
+  animation: 60s slideRight infinite linear;
 }
 
-.Bubble {
-  flex: 0 0 100px;
-  margin: 0 10px;
-  transition: transform 0.5s ease;
+.clientLogos:hover .Client-Slide{
+  animation-play-state: paused;
 }
 
-/* Add styles for enlarging the middle bubble */
-.Bubble.active {
-  transform: scale(1.2);
+.Client-Slide img{
+  margin: 0 15px;
 }
 
-.Bubble img {
-  max-width: 100%; /* Ensure images fit within their containers */
-  height: auto;
-  width: 50%;
-}
-
-.Bubble-2-columns {
-  grid-column: span 2; /* Make this element span two columns */
-}
-
-.Bubble-2-rows {
-  grid-row: span 2; /* Make this element span two rows */
-}
-
-.Bubble-2{
-  grid-column: span 2; /* Make this element span two columns */
-  grid-row: span 2; /* Make this element span two rows */
+.Client-Slide img:hover{
+  transform: scale(1.1);
+  transition-duration: .5s;
 }
 
 #map {
