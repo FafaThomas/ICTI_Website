@@ -43,24 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  cardSlider.addEventListener("wheel", (event) => {
-    if (event.deltaY > 0) {
-      if(currentSlide === totalCards - 1){
-        slideToNext();
-      }else{
-        event.preventDefault();
-        slideToNext();
-      }
-    } else if (event.deltaY < 0) {
-      if(currentSlide === 0){
-        slideToPrevious();
-      }else{
-        event.preventDefault();
-        slideToPrevious();
-      }
-      
-    }
-  });
 
   
 
