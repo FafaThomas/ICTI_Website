@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const header = document.querySelector(".header");
   const navbar = document.querySelector(".navbar");
-
+  const CompanyLogo = document.querySelector(".CompanyLogo");
+  const Hero = document.querySelector(".dhero");
   // Initial header height
   let headerHeight = header.clientHeight;
 
@@ -20,8 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > navbar.clientHeight) {
       // Set the smaller header height
       header.style.height = `${navbar.clientHeight + 30}px`;
+      CompanyLogo.style.setProperty('width', '250px', 'important');
+      Hero.style.margin = '0 5%';
     } else {
       // Restore the original header height
+      CompanyLogo.style.setProperty('width', '600px', 'important');
+      Hero.style.margin = '0 5%';
       header.style.height = `${headerHeight}px`;
     }
   });

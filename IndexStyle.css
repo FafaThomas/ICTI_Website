@@ -197,8 +197,9 @@ height: 100%;
 }
 
 .CompanyLogo {
-  width: 100px; /* Set your initial width here */
+  width: 600px !important; /* Set your initial width here */
   height: auto; /* Maintain aspect ratio */
+  transition: .5s;
 }
 
 .logo:hover {
@@ -249,12 +250,11 @@ height: 100%;
 .dhero {
   display: block;
   text-align: justify; /* justify the text */
-  margin-top: 50px;
+  margin-top: -10px;
   transition-duration: .5s;
   transform: translateY(0%);
   width: 50%; /* set the width to 60% */
-  margin-left: 10%; /* set the left margin to 15% */
-  margin-right: 40%; /* set the right margin to 25% */
+  margin: 0 5%;
 }
 
 .dhero h2 {
@@ -729,7 +729,7 @@ z-index: 100;
 
 .about_text {
   flex: 1; /* Allow the text section to expand and take up available space */
-  padding: 20px; /* Add padding to create spacing */
+  padding: 0px; /* Add padding to create spacing */
   margin-left: -13%;
   margin-top: -4%;
 }
@@ -1008,13 +1008,12 @@ z-index: 100;
 /* Desktops */
 @media screen and (min-width: 1919px) and (max-width: 2000px) {
   .header {
-    height: 42%;
+    height: 45%;
   }
 
   .DownLogo {
-    margin-top: -10px;
-    margin-bottom: 60px;
-    padding-top: 215px;
+    margin: 0 28%;
+    padding: 7.7%;
   }
 
   .about_text {
