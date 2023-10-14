@@ -496,15 +496,41 @@ height: 100%;
   z-index: 1001; /* Ensure it's above other content */
 }
 
+.expanded-card:hover {
+  cursor: default;
+}
+
 .Expanded{
   display: none;
+}
+
+.Expanded-Header{
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+}
+
+.ExBackLogo {
+white-space: nowrap;
+height: auto;
+width: 50px !important;
+padding: 0;
+margin: -3% 4%;
+z-index: 100;
+}
+
+.ExBackLogo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: .5s;
+  
 }
 
 .Expanded-Logo{
   height: auto;
   width: 200px !important;
   padding: 0;
-  margin-top: -40px;
+  margin: -3% 40%;
 }
 
 .Expanded-Title {
@@ -574,6 +600,18 @@ height: 100%;
   transition: opacity 0.3s ease; /* Add a transition for opacity */
 }
 
+.ProdCardOpacityGray {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  border-radius: 10px; /* Add rounded corners to the overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Add a transition for opacity */
+}
+
 .service-card,.Product-Item-Card {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -609,7 +647,7 @@ height: 100%;
 }
 
 /* Style the button */
-.InqBtn {
+.InqBtn, .ProdInqBtn {
   user-select: none;
   -webkit-user-select: none; /* For Safari and Chrome */
   -moz-user-select: none; /* For Firefox */
@@ -631,20 +669,21 @@ height: 100%;
 }
 
 /* Show the button on hover */
-.service-card:hover .InqBtn,.Product-Item-Card:hover .InqBtn {
+.service-card:hover .InqBtn,.Product-Item-Card:hover .ProdInqBtn {
   opacity: 1;
 }
 
-.service-card:hover .CardOpacityGray,.Product-Item-Card:hover .CardOpacityGray {
+.service-card:hover .CardOpacityGray,.Product-Item-Card:hover .ProdCardOpacityGray {
+  cursor: pointer;
   opacity: .4; /* Show the overlay when hovering the card */
 }
 
 /* Add hover effect */
-.InqBtn:hover {
+.InqBtn:hover, .ProdInqBtn:hover {
   background-color: #FF6600;
 }
 
-.InqBtn:active {
+.InqBtn:active, .ProdInqBtn:active {
   transform: translate(-50%, -50%) scale(0.95); /* Shrink the button when clicked */
   transition: transform 0.2s ease; /* Add a transition for the transform property */
 }

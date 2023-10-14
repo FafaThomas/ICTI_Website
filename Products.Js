@@ -72,12 +72,34 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.createElement("div");
     overlay.classList.add("expanded-card-overlay");
     overlay.appendChild(cardClone);
+  
+    // Append a back button to the overlay
+    const backButton = document.createElement("img");
+    backButton.src = "Images/Product Section/BackBtn.png";
+    backButton.alt = "back";
+    backButton.className = "ExBackLogo";
+    overlay.appendChild(backButton);
+  
     document.body.appendChild(overlay);
-
-    overlay.addEventListener("click", () => {
-      document.body.removeChild(overlay);
+  
+  
+    // Show the popup when clicking on the overlay or back button
+    overlay.addEventListener("click", (event) => {
+      const className = event.target.className;
+      const targetElement = document.getElementById('contact');
+      if (className == "ExBackLogo"){
+        document.body.removeChild(overlay);
+        
+      }else if (className == "ProdCardOpacityGray" || className == "ProdInqBtn"){
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+        document.body.removeChild(overlay);
+      }
+      
     });
   }
+  
+  
+  
 
   function toggleCardContent(index) {
     const card = cards[index];
