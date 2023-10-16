@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.appendChild(backButton);
   
     document.body.appendChild(overlay);
-  
+    document.body.style.overflow = "hidden";
   
     // Show the popup when clicking on the overlay or back button
     overlay.addEventListener("click", (event) => {
@@ -89,12 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const targetElement = document.getElementById('contact');
       if (className == "ExBackLogo"){
         document.body.removeChild(overlay);
-        
+        document.body.style.overflow = "auto";
       }else if (className == "ProdCardOpacityGray" || className == "ProdInqBtn"){
         targetElement.scrollIntoView({ behavior: 'smooth' });
         document.body.removeChild(overlay);
+        document.body.style.overflow = "auto";
       }
       
+
+
     });
   }
   

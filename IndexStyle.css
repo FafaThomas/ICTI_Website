@@ -124,6 +124,7 @@ body {
   height: 25px;
   transform: translateX(1200%);
   transition-duration: .5s;
+  margin-top: -20%;
 }
 
 .bar {
@@ -174,6 +175,7 @@ body {
   transform: translateX(100%);
   transition-duration: .5s;
   opacity: 0;
+  margin-top: -20%;
 }
 
 /* Show menu when the button is active */
@@ -488,12 +490,19 @@ height: 100%;
   max-height: none; /* Remove the max-height limit */
   background-color: #fff;
   overflow: auto; /* Enable scrolling if content overflows */
+  scrollbar-width: none; /* Hide scrollbar on Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar on Internet Explorer/Edge */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
   position: fixed; /* Use fixed positioning to cover the entire screen */
   z-index: 1001; /* Ensure it's above other content */
+}
+
+.expanded-card::-webkit-scrollbar {
+  width: 0.1rem; /* Adjust to hide the scrollbar completely */
+  background-color: transparent; /* Hide scrollbar background */
 }
 
 .expanded-card:hover {
@@ -729,9 +738,9 @@ z-index: 100;
 
 .about_text {
   flex: 1; /* Allow the text section to expand and take up available space */
-  padding: 0px; /* Add padding to create spacing */
+  padding: 10px; /* Add padding to create spacing */
   margin-left: -13%;
-  margin-top: -4%;
+  margin-top: 0%;
 }
 
 .about-content img {
@@ -1103,9 +1112,13 @@ z-index: 100;
   
   .about_text {
     margin-left: -15%;
-    margin-top: 0%;
+    margin-top: 0;
   }
-  
+
+  .about_text p {
+    padding-top: 20px;
+  }
+
   .about-content img {
     margin-top: -5%;
     margin-right: -18%;

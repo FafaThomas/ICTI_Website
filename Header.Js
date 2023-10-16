@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const CompanyLogo = document.querySelector(".CompanyLogo");
   const Hero = document.querySelector(".dhero");
+  const Burger = document.querySelector(".hamburger-btn");
+  const Menu = document.querySelector(".menu-container");
   // Initial header height
   let headerHeight = header.clientHeight;
 
@@ -23,11 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
       header.style.height = `${navbar.clientHeight + 30}px`;
       CompanyLogo.style.setProperty('width', '250px', 'important');
       Hero.style.margin = '0 5%';
+      Burger.style.margin = '0% 0%';
+      Menu.style.margin = '0% 0%';
     } else {
       // Restore the original header height
+      
+      header.style.height = `${headerHeight}px`;
       CompanyLogo.style.setProperty('width', '600px', 'important');
       Hero.style.margin = '0 5%';
-      header.style.height = `${headerHeight}px`;
     }
   });
 
