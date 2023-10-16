@@ -28,17 +28,14 @@ if (isset($_POST['submit'])) {
         $mail->Port = 465;  // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         // Recipients
-        $mail->setFrom($email, 'Mailer');
-        $mail->addAddress('support@icontroltech.com');  // Add a recipient
+        $mail->setFrom($email, $name);
+        $mail->addAddress('support@icontroltech.com');  // Recipient
         $mail->addReplyTo($email, $name);
 
         // Email content
         $mail->isHTML(false);  // Set email format to plain text
-        $mail->Subject = 'Contact Form Submission - ' . $name . ' - ' . $type;
-        $mail->Body = "Name: " . $name . "\n" .
-                      "Email: " . $email . "\n" .
-                      "Type: " . $type . "\n" .
-                      "Message: " . $message;
+        $mail->Subject = $name . ' - ' . $type;  // Subject with name and type
+        $mail->Body = $message;  // Message in the body
 
         // Send the email
         $mail->send();
