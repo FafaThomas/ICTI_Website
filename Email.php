@@ -1,16 +1,19 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include('C:\Users\ICTI\Documents\ICTI Cred Test\config.php');
+
     $name = $_POST['name'];
     $email = $_POST['email'];
     $type = $_POST['type'];
     $message = $_POST['message'];
 
-    // SMTP server settings
-    $smtp_host = 'mail.icontroltech.com';
-    $smtp_port = 465;
-    $smtp_username = 'inquiry@icontroltech.com'; // Your SMTP username (your email address)
-    $smtp_password = 'icti_inquiry2023'; // Your SMTP password
+    // Retrieve SMTP settings from the configuration
+    $smtp_host = $config['smtp_host'];
+    $smtp_port = $config['smtp_port'];
+    $smtp_username = $config['smtp_username'];
+    $smtp_password = $config['smtp_password'];
+
     
     // Recipient email address
     $recipient_email = 'support@icontroltech.com'; // Change to the recipient's email address
