@@ -1109,6 +1109,10 @@ z-index: 100;
   .DownLogo {
     padding-top: 650px;
   }
+
+  .ExBackLogo {
+    margin: -3% -3%;
+  }
   
   .about_text {
     margin-left: -15%;
