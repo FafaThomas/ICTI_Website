@@ -96,6 +96,7 @@ body {
   z-index: 3;
   padding: 20px;
   color: #fff; /* Set your desired text color */
+  height: 80vh;
 }
 
 .navbar {
@@ -252,7 +253,6 @@ height: 100%;
 .dhero {
   display: block;
   text-align: justify; /* justify the text */
-  margin-top: -10px;
   transition-duration: .5s;
   transform: translateY(0%);
   width: 50%; /* set the width to 60% */
@@ -260,7 +260,7 @@ height: 100%;
 }
 
 .dhero h2 {
-  font-size: 40px;
+  font-size: 50px;
   margin-bottom: 10px;
   opacity: 1;
   transform: translateY(30px);
@@ -268,7 +268,7 @@ height: 100%;
 }
 
 .dhero p {
-  font-size: 16.7px;
+  font-size: 30px;
   margin-bottom: 10px;
   opacity: 1;
   transform: translateY(30px);
@@ -278,7 +278,7 @@ height: 100%;
 
 .dbtn {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 20px 40px;
   background-color: #001E5E;
   color: #fff;
   text-decoration: none;
@@ -292,6 +292,7 @@ height: 100%;
   -webkit-user-select: none; /* For Safari and older versions of Chrome */
   -moz-user-select: none; /* For Firefox */
   -ms-user-select: none; /* For Internet Explorer/Edge */
+  font-size: 20px;
 }
 
 .dbtn:hover {
@@ -299,49 +300,9 @@ height: 100%;
   cursor: pointer;
 }
 
-.mhero {
-  display: none;
-  text-align: center;
-  margin-top: 50px;
-  transition-duration: .5s;
-  transform: translateY(-120%);
-}
-
-.mhero h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  opacity: 1;
-  transform: translateY(-30%);
-  transition: opacity 1s ease, transform 1s ease;
-  
-}
-
-.mbtn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: background-color 1s;
-  margin-top: 2%;
-  opacity: 1;
-  transform: translateY(-30%);
-  transition: opacity 1s ease, transform 1s ease;
-  user-select: none;
-  -webkit-user-select: none; /* For Safari and older versions of Chrome */
-  -moz-user-select: none; /* For Firefox */
-  -ms-user-select: none; /* For Internet Explorer/Edge */
-}
-
-.mbtn:hover {
-  background-color: #555;
-  cursor: pointer;
-}
-
 .DownLogo {
   scale: 0.2;
-  padding-top: 550px;
+  padding-top: 1000px;
   display: block; /* Make the image a block-level element */
   margin: 0 auto; /* Center the image horizontally by setting left and right margins to auto */
   transition: transform 0.3s ease;
@@ -739,8 +700,9 @@ z-index: 100;
 .about_text {
   flex: 1; /* Allow the text section to expand and take up available space */
   padding: 10px; /* Add padding to create spacing */
-  margin-left: -13%;
+  margin-left: -35%;
   margin-top: 0%;
+  font-size: 23px;
 }
 
 .about-content img {
@@ -748,14 +710,9 @@ z-index: 100;
   height: auto;
   width: 600px;
   margin: 0;
-  margin-right: -16%;
+  margin-right: -45%;
   padding: 0;
   
-}
-
-.about-content p {
-  font-size: 16px;
-  color: #1a1a1a;
 }
 
 
@@ -1011,231 +968,4 @@ z-index: 100;
   padding: 20px;
   text-align: center;
   width: 100%;
-}
-
-
-/* Desktops */
-@media screen and (min-width: 1919px) and (max-width: 2000px) {
-  .header {
-    height: 45%;
-  }
-
-  .DownLogo {
-    margin: 0 28%;
-    padding: 7.7%;
-  }
-
-  .about_text {
-    margin-left: -40%;
-    margin-top: 0%;
-  }
-  
-  .about-content img {
-    margin-top: -5%;
-    margin-right: -45%;
-    padding: 0;
-    
-  }
-}
-
-@media screen and (min-width: 1580px) and (max-width: 1800px) {
-  /* CSS rules for 1600x900 */
-  .header {
-    height: 55%;
-  }
-
-  .DownLogo {
-    padding-top: 600px;
-  }
-  
-  .about_text {
-    margin-left: -25%;
-    margin-top: 0%;
-  }
-  
-  .about-content img {
-    margin-top: -5%;
-    margin-right: -30%;
-    padding: 0;
-    
-  }
-
-}
-
-@media screen and (min-width: 1500px) and (max-width: 1579px) {
-  /* CSS rules for 1536x864 */
-  .header {
-    height: 58%;
-  }
-
-  .about-content img {
-    margin-top: -5%;
-    margin-right: -25%;
-    padding: 0;
-    
-  }
-
-}
-
-@media screen and (min-width: 1400px) and (max-width: 1499px) {
-  /* CSS rules for 1440x900 */
-  .header {
-    height: 60%;
-  }
-
-  .DownLogo {
-    padding-top: 600px;
-  }
-  
-  .about_text {
-    margin-left: -20%;
-    margin-top: 0%;
-  }
-
-  .about-content img {
-    margin-top: -5%;
-    margin-right: -20%;
-    padding: 0;
-    
-  }
-}
-
-@media screen and (min-width: 1300px) and (max-width: 1399){
-  /* CSS rules for 1366x768 */
-  .header {
-    height: 70%;
-  }
-
-  .DownLogo {
-    padding-top: 650px;
-  }
-
-  .ExBackLogo {
-    margin: -3% -3%;
-  }
-  
-  .about_text {
-    margin-left: -15%;
-    margin-top: 0;
-  }
-
-  .about_text p {
-    padding-top: 20px;
-  }
-
-  .about-content img {
-    margin-top: -5%;
-    margin-right: -18%;
-    padding: 0;
-    
-  }
-}
-
-@media screen and (min-width: 1200px) and (max-width: 1299px) {
-  /* CSS rules for 1280x720 */
-  .header {
-    height: 75%;
-  }
-
-  .DownLogo {
-    padding-top: 650px;
-  }
-  
-  .about_text {
-    margin-left: -10%;
-    margin-top: 0%;
-  }
-
-  .about-content img {
-    margin-top: 0%;
-    margin-right: -13%;
-    padding: 0;
-    
-  }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1199px) {
-  /* CSS rules for 1024x768 */
-  .header {
-    height: 85%;
-  }
-
-  .DownLogo {
-    padding-top: 730px;
-  }
-  
-  .about_text {
-    margin-left: 0%;
-    margin-top: 0%;
-  }
-
-  .about-content{
-    overflow-x: hidden;
-  }
-  .about-content img {
-    margin-top: 0%;
-    margin-right: -15%;
-    padding: 0;
-    
-  }
-
-  
-}
-
-/* Tablets */
-@media screen and (max-width: 1280px) and (max-height: 800px) {
-  /* CSS rules for 1280x800 */
-}
-
-@media screen and (max-width: 962px) and (max-height: 601px) {
-  /* CSS rules for 962x601 */
-}
-
-@media screen and (max-width: 810px) and (max-height: 1080px) {
-  /* CSS rules for 810x1080 */
-}
-
-@media screen and (max-width: 800px) and (max-height: 1180px) {
-  /* CSS rules for 800x1180 */
-}
-
-@media screen and (max-width: 768px) and (max-height: 1024px) {
-  /* CSS rules for 768x1024 */
-}
-
-/* Mobile */
-@media screen and (max-width: 414px) and (max-height: 896px) {
-  /* CSS rules for 414x896 */
-}
-
-@media screen and (max-width: 414px) and (max-height: 736px) {
-  /* CSS rules for 414x736 */
-}
-
-@media screen and (max-width: 393px) and (max-height: 873px) {
-  /* CSS rules for 393x873 */
-}
-
-@media screen and (max-width: 390px) and (max-height: 844px) {
-  /* CSS rules for 390x844 */
-}
-
-@media screen and (max-width: 375px) and (max-height: 812px) {
-  /* CSS rules for 375x812 */
-}
-
-@media screen and (max-width: 375px) and (max-height: 667px) {
-  /* CSS rules for 375x667 */
-}
-
-@media screen and (max-width: 360px) and (max-height: 800px) {
-  /* CSS rules for 360x800 */
-}
-
-@media screen and (max-width: 360px) and (max-height: 640px) {
-  /* CSS rules for 360x640 */
-}
-
-@media screen and (max-width: 328px) and (max-height: 926px) {
-  /* CSS rules for 328x926 */
 }
