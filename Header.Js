@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const Menu = document.querySelector(".menu-container");
   const navcontainer = document.querySelector(".nav-container");
   // Initial header height
-  let headerHeight = localStorage.getItem("headerHeight") || header.clientHeight;
+  let headerHeight = header.offsetHeight;
 
   // Set the initial header height
   header.style.height = `${headerHeight}px`;
@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
       CompanyLogo.style.setProperty('padding-top', '100px');
       Hero.style.margin = '0 5%';
     }
-    // Save the current header height to local storage
-    localStorage.setItem("headerHeight", headerHeight);
   });
 
   // Slideshow
@@ -122,14 +120,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Hamburger menu
   const hamburgerBtn = document.querySelector(".hamburger-btn");
-  const mobileburgerBtn = document.querySelector(".mobileburger-btn");
   const headerElement = document.getElementById("header");
 
   hamburgerBtn.addEventListener("click", () => {
     hamburgerBtn.classList.toggle("active");
-    if (mobileburgerBtn.classList.contains("active")) {
-      mobileburgerBtn.classList.toggle("active");
-    }
     if (hamburgerBtn.classList.contains("active")) {
       document.getElementById("burger-btn").style.transform = "translateX(0%)";
     } else {

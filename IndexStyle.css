@@ -151,28 +151,6 @@ body {
   transform: translateY(-9px) rotate(45deg);
 }
 
-.mobileburger-btn {
-  cursor: pointer;
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  transform: translateX(500%);
-  transition-duration: 1s;
-}
-
-.mobileburger-btn.active .bar:nth-child(1) {
-  transform: translateY(9px) rotate(-45deg);
-}
-
-.mobileburger-btn.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.mobileburger-btn.active .bar:nth-child(3) {
-  transform: translateY(-9px) rotate(45deg);
-}
 
 .menu-container {
   display: inline-flex;
@@ -186,15 +164,6 @@ body {
 .hamburger-btn.active ~ .menu-container{
   transform: translateX(0%);
   opacity: 1;
-}
-
-.mobileburger-btn.active ~ .menu-container{
-  
-  opacity: 1;
-}
-
-.mobileburger-btn.active ~ .header{
-height: 100%;
 }
 
 .logo {
@@ -868,6 +837,7 @@ height: 100%;
   position: relative;
   bottom: 50px; /* Experiment with the top value */
   left: 60px; /* Experiment with the left value */
+  max-width: 30vw;
 }
 
 .contact-area {
@@ -960,6 +930,21 @@ height: 100%;
   background-color: #555;
 }
 
+.MaintenanceImg{
+  position: absolute;
+  z-index: 50;
+  top: 580vh;
+  left: 54vw;
+  width: auto;
+  height: 800px;
+}
+
+.Maintenanceh2{
+  position: absolute;
+  z-index: 55;
+  top: 615vh;
+  left: 66vw;
+}
 
 
 /* Footer styles */
@@ -968,5 +953,80 @@ height: 100%;
   color: #fff;
   padding: 20px;
   text-align: center;
-  width: 100%;
+  width: 100% !important;
+}
+
+
+@media (max-width: 1366px) {
+
+  .header{
+    height: 70vh;
+  }
+  
+  .dhero h2 {
+    font-size: 27px;
+  }
+  
+  .dhero p {
+    font-size: 17px;
+  }
+
+  .dbtn {
+    padding: 15px 30px;
+    font-size: 15px;
+  }
+
+  .DownLogo {
+    padding-top: 500px;
+  }
+
+  .ExBackLogo {
+    top: 0px; /* Experiment with the top value */
+  }
+
+  .Expanded-Logo{
+    width: 200px !important;
+    margin-top: -10vh;
+  }
+
+  .Expanded-Content {
+    padding: 20px;
+  }
+
+  .about_text {
+    margin-left: -13%;
+    font-size: 19px;
+  }
+  
+  .about-content img {
+    margin-right: -17%;
+  }
+
+  .MaintenanceImg{
+    top: 780vh;
+    left: 40vw;
+    height: 750px;
+  }
+  
+  .Maintenanceh2{
+    top: 5400px;
+    left: 770px;
+  }
+
+}
+
+@media (max-width: 1280px) {
+  /* Styles for 1280p and above */
+}
+
+@media (max-width: 1024px) {
+  /* Styles for 1024p and above */
+}
+
+@media (max-width: 768px) {
+  /* Styles for tablets */
+}
+
+@media (max-width: 480px) {
+  /* Styles for mobile devices */
 }

@@ -37,11 +37,6 @@
               <div class="bar"></div>
               <div class="bar"></div>
             </div>
-            <div class="mobileburger-btn" id="mobileburger-btn">
-              <div class="bar"></div>
-              <div class="bar"></div>
-              <div class="bar"></div>
-            </div>
           <div class="menu-container">
             <ul class="nav-links">
               <li><a href="#products">Products</a></li>
@@ -652,7 +647,7 @@
       </div>
       <div class="contact-area">
         <h4>We'd love to hear from you. Reach out to us for any inquiries or project collaborations.</h4>
-        <form class="contact-form" id="contactForm" action="email.php" method="post">
+      <form class="contact-form" id="contactForm" action="email.php" method="post">
           <input type="text" name="name" placeholder="Your Name">
           <input type="email" name="email" placeholder="Your Email">
           <label for="type"><strong>Select Category:</strong></label>
@@ -663,7 +658,11 @@
           <textarea name="message" class="messagetextarea" placeholder="Your Message"></textarea>
       
           <div class="contact-buttons">
-              <button type="submit" class="submitbtn">Send Message</button>
+              <button type="submit" class="submitbtn" id="sendMessageButton">Sorry, This Feature is Under Construction</button>
+              <script>
+                // Temporary Disable until finished
+                document.getElementById('sendMessageButton').disabled = true;
+              </script>
               <div class="socials_tab">
                   <p>Or visit us on:</p>
                   <div class="socials_icon">
@@ -681,6 +680,10 @@
       </div> 
       
     </div>
+
+      
+    
+
   </section>
 
   <!-- Include the Google Maps JavaScript API with your API key -->
