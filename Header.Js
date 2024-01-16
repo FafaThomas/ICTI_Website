@@ -5,8 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const Hero = document.querySelector(".dhero");
   const Burger = document.querySelector(".hamburger-btn");
   const Menu = document.querySelector(".menu-container");
+  const navcontainer = document.querySelector(".nav-container");
   // Initial header height
-  let headerHeight = header.clientHeight;
+  let headerHeight = localStorage.getItem("headerHeight") || header.clientHeight;
+
+  // Set the initial header height
+  header.style.height = `${headerHeight}px`;
 
   // Function to scroll to a section by its ID with an additional offset
   function scrollToSectionWithOffset(sectionId, offset) {
@@ -22,18 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check the scroll position
     if (window.scrollY > navbar.clientHeight) {
       // Set the smaller header height
-      header.style.height = `${navbar.clientHeight + 30}px`;
+      header.style.height = `${navbar.clientHeight}px`;
       CompanyLogo.style.setProperty('width', '250px', 'important');
+      CompanyLogo.style.setProperty('padding-top', '7px');
+      navcontainer.style.setProperty('padding-top', '0px');
       Hero.style.margin = '0 5%';
       Burger.style.margin = '0% 0%';
       Menu.style.margin = '0% 0%';
     } else {
       // Restore the original header height
-      
       header.style.height = `${headerHeight}px`;
       CompanyLogo.style.setProperty('width', '600px', 'important');
+      CompanyLogo.style.setProperty('padding-top', '100px');
       Hero.style.margin = '0 5%';
     }
+    // Save the current header height to local storage
+    localStorage.setItem("headerHeight", headerHeight);
   });
 
   // Slideshow
@@ -184,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-    // Add an event listener to the image element
+  // Add an event listener to the image element
   document.getElementById('scrollToProducts').addEventListener('click', function() {
     // Smooth scroll to the #products section
     document.querySelector('#products').scrollIntoView({
@@ -194,6 +202,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Shrink the image after clicking (optional)
     this.style.transform = 'scale(0.9)';
   });
-
-
 });

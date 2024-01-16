@@ -95,6 +95,7 @@ body {
   position: relative;
   z-index: 3;
   padding: 20px;
+  padding-top: 0px;
   color: #fff; /* Set your desired text color */
   height: 80vh;
 }
@@ -103,12 +104,14 @@ body {
   display: flex;
   justify-content:space-between;
   align-items: center;
+  height: 50px;
 }
 
 .nav-container{
   display: inline-flex;
   justify-content:space-between;
   align-items: center;
+  padding-top: 90px;
 }
 
 .logo img {
@@ -202,6 +205,7 @@ height: 100%;
 .CompanyLogo {
   width: 600px !important; /* Set your initial width here */
   height: auto; /* Maintain aspect ratio */
+  padding-top: 100px;
   transition: .5s;
 }
 
@@ -256,12 +260,13 @@ height: 100%;
   transition-duration: .5s;
   transform: translateY(0%);
   width: 50%; /* set the width to 60% */
+  padding-top: 60px;
   margin: 0 5%;
 }
 
 .dhero h2 {
   font-size: 50px;
-  margin-bottom: 10px;
+  padding-top: 30px;
   opacity: 1;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
@@ -269,7 +274,7 @@ height: 100%;
 
 .dhero p {
   font-size: 30px;
-  margin-bottom: 10px;
+  padding-top: 20px;
   opacity: 1;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
@@ -336,7 +341,7 @@ height: 100%;
   align-items: center; /* Center the content vertically */
   justify-content: center; /* Center the content horizontally */
   margin-bottom: 10px;
-  
+  padding-top: 30px;
 }
 
 .Product, .Service, .About, .Partner, .Client  {
@@ -474,20 +479,28 @@ height: 100%;
   display: none;
 }
 
-.Expanded-Header{
+.Expanded-Header {
   display: flex;
   flex-direction: row;
-  align-content: flex-end;
+  justify-content: center;
+}
+
+.Expanded-Header h3 {
+  padding-top: 10vh;
+  padding-bottom: 20px;
 }
 
 .ExBackLogo {
-white-space: nowrap;
-height: auto;
-width: 50px !important;
-padding: 0;
-margin: -3% 4%;
-z-index: 100;
+  white-space: nowrap;
+  height: auto;
+  width: 50px !important;
+  margin-top: -5vh;
+  z-index: 100;
+  position: absolute;
+  top: 30px; /* Experiment with the top value */
+  right: 30px; /* Experiment with the left value */
 }
+
 
 .ExBackLogo:hover {
   cursor: pointer;
@@ -497,16 +510,14 @@ z-index: 100;
 }
 
 .Expanded-Logo{
+  white-space: nowrap;
   height: auto;
-  width: 200px !important;
-  padding: 0;
-  margin: -3% 40%;
-}
-
-.Expanded-Title {
-  padding: 0;
-  margin-top: -50px;
-  padding-bottom: 30px;
+  width: 270px !important;
+  margin-top: -5vh;
+  z-index: 100;
+  position: absolute;
+  top: 30px; /* Experiment with the top value */
+  left: 40vw; /* Experiment with the left value */
 }
 
 .Expanded-Category{
@@ -555,6 +566,7 @@ z-index: 100;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create a responsive grid with columns */
   gap: 20px; /* Add spacing between cards */
   justify-content: center; /* Center the columns horizontally */
+  padding: 20px;
   
 }
 
@@ -804,21 +816,21 @@ z-index: 100;
 }
 
 #map {
-  width: 100%;
+  width: 37vw;
   height: 200px;
 }
 
-.tab {
-  margin-left: 123px; /* Adjust the value to control the indentation */
+.contact-main {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .contact-container {
-  max-width: 700px !important;
-  margin: 0 auto;
-  padding: 0;
-  display: inline-flex;
-  justify-content:flex-start;
-  align-items: flex-start;
+  padding-left: 30px;
 }
 
 
@@ -826,53 +838,39 @@ z-index: 100;
 
 /* Contact section styles */
 .contact-form {
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
   width: 100%;
 }
 
 .contact-info {
-  display: flex;
-  flex-direction: column; /* Make it a flex column */
-  align-items: flex-start; /* Align children to the left */
-  width: fit-content;
   padding: 0;
   margin: 0;
 }
 
 
-
-.Info {
-  display: flex;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 5px;
+.Info{
+  height: 70.19px !important;
 }
 
 .Info_Icon {
-  width: 20px !important; /* Adjust the width as needed */
-  height: auto !important; /* Maintain aspect ratio */
+  height: 37px;
+  width: 44px !important;
   margin-right: 10px; /* Add some spacing between the image and text */
-  padding-bottom: 5px;
 }
 
 .Double_Icon {
-  width: 27px !important; /* Adjust the width as needed */
-  height: 35px !important; /* Maintain aspect ratio */
-  margin-right: 10px; /* Add some spacing between the image and text */
-  padding-bottom: 5px;
+  height: 40px;
+  width: 40px !important;
 }
 
-.Info h4{
+.Info h4 {
   margin: 0;
+  position: relative;
+  bottom: 50px; /* Experiment with the top value */
+  left: 60px; /* Experiment with the left value */
 }
 
 .contact-area {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px; /* Adjust the gap as needed */
   margin-right: 20px;
   padding-right: 10px;
   max-width: 700px;
@@ -887,9 +885,12 @@ z-index: 100;
   align-items: center; /* Center elements vertically */
 }
 
+.messagetextarea{
+  height: 250px;
+}
+
 .submitbtn {
   grid-column: span 1.5; /* Make the button span 1.5 columns */
-  /* Add other CSS styles for the button as needed */
 }
 
 .socials_tab {
