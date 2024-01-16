@@ -930,23 +930,6 @@ body {
   background-color: #555;
 }
 
-.MaintenanceImg{
-  position: absolute;
-  z-index: 50;
-  top: 580vh;
-  left: 54vw;
-  width: auto;
-  height: 800px;
-}
-
-.Maintenanceh2{
-  position: absolute;
-  z-index: 55;
-  top: 615vh;
-  left: 66vw;
-}
-
-
 /* Footer styles */
 .footer {
   background-color: #333;
@@ -1001,32 +984,192 @@ body {
   .about-content img {
     margin-right: -17%;
   }
-
-  .MaintenanceImg{
-    top: 780vh;
-    left: 40vw;
-    height: 750px;
-  }
-  
-  .Maintenanceh2{
-    top: 5400px;
-    left: 770px;
-  }
-
 }
 
 @media (max-width: 1280px) {
-  /* Styles for 1280p and above */
+  .header{
+    height: 80vh;
+  }
+
+  .about_text {
+    margin-left: -9%;
+    font-size: 17px;
+  }
+  
+  .about-content img {
+    width: 500px;
+    margin-right: -13%;
+  }
 }
 
 @media (max-width: 1024px) {
-  /* Styles for 1024p and above */
+  .CompanyLogo {
+    width: 500px !important; /* Set your initial width here */
+  }
+
+  .about_text {
+    margin-left: 5%;
+    font-size: 14px;
+  }
+  
+  .about-content img {
+    width: 500px;
+    margin-right: 0%;
+  }
+
+  .contact-area {
+    margin-right: 0%;
+    padding: 10px;
+  }
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   /* Styles for tablets */
+
+  .CompanyLogo {
+    width: 300px !important; /* Set your initial width here */
+  }
+  
+  .dhero h2 {
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  
+  .dhero p {
+    font-size: 12px;
+    padding-top: 10px;
+  }
+  
+  
+  .dbtn {
+    padding: 10px 30px;
+    font-size: 13px;
+  }
+
+  .DownLogo {
+    padding-top: 300px;
+  }
+  
+  .card img {
+    height: 100px;
+  }
+  
+  .card h3 {
+    font-size: 14px;
+  }
+  
+  .card p {
+    font-size: 12px;
+  }
+
+  .ExBackLogo {
+    width: 30px !important;
+    position: absolute;
+    top: 5px; /* Experiment with the top value */
+  }
+  
+  .Expanded-Logo{
+    width: 150px !important;
+    margin-top: -10vh;
+    left: 35vw; /* Experiment with the left value */
+  }
+
+  .about_text {
+    margin-left: 5%;
+    font-size: 11px;
+  }
+  
+  .about-content img {
+    width: 350px;
+    margin-right: 0%;
+  }
+
+  .Info{
+    height: 35px !important;
+  }
+
+  .Info_Icon {
+    height: 12px;
+    width: 17px !important;
+    margin-right: 10px; /* Add some spacing between the image and text */
+  }
+  
+  .Double_Icon {
+    height: 20px;
+    width: 20px !important;
+  }
+  
+  .Info h4 {
+    bottom: 25px; /* Experiment with the top value */
+    left: 30px; /* Experiment with the left value */
+    font-size: 10px;
+  }
+  
+  .contact-area {
+
+    width: 400px;
+    font-size: 10px;
+  }
+
+  .messagetextarea {
+    height: 90px;
+  }
 }
 
 @media (max-width: 480px) {
   /* Styles for mobile devices */
+  .nav-container{
+    position: absolute;
+    font-size: 13px;
+  }
+
+  .CompanyLogo {
+    width: 300px !important; /* Set your initial width here */
+    padding-top: 150px;
+  }
+
+  .header{
+    height: 60vh;
+  }
+  
+  .dhero h2 {
+    font-size: 15px;
+    padding-top: 40px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .dhero p {
+    font-size: 13px;
+    padding-top: 20px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  
+  .dbtn {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .DownLogo {
+    padding-top: 700px;
+  }
+
+  .card {
+    flex: 0 0 350px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;perspective: 1000px; /* Add perspective for 3D effect */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
 }

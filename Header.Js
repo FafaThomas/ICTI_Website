@@ -26,18 +26,38 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check the scroll position
     if (window.scrollY > navbar.clientHeight) {
       // Set the smaller header height
-      header.style.height = `${navbar.clientHeight}px`;
-      CompanyLogo.style.setProperty('width', '250px', 'important');
-      CompanyLogo.style.setProperty('padding-top', '7px');
-      navcontainer.style.setProperty('padding-top', '0px');
+      if (window.innerWidth > 480){
+        header.style.height = `${navbar.clientHeight}px`;
+        CompanyLogo.style.setProperty('width', '250px', 'important');
+        CompanyLogo.style.setProperty('padding-top', '7px');
+        navcontainer.style.setProperty('padding-top', '0px');
+      }else{
+        header.style.height = `${navbar.clientHeight + 50}px`;
+        CompanyLogo.style.setProperty('width', '200px', 'important');
+        CompanyLogo.style.setProperty('padding-top', '100px');
+        navcontainer.style.setProperty('padding-top', '0px');
+      }
+      
       Hero.style.margin = '0 5%';
       Burger.style.margin = '0% 0%';
       Menu.style.margin = '0% 0%';
     } else {
       // Restore the original header height
       header.style.height = `${headerHeight}px`;
-      CompanyLogo.style.setProperty('width', '600px', 'important');
-      CompanyLogo.style.setProperty('padding-top', '100px');
+      if (window.innerWidth > 1024) {
+        CompanyLogo.style.setProperty('width', '600px', 'important');
+        CompanyLogo.style.setProperty('padding-top', '100px');
+      } else if (window.innerWidth <= 1024 && window.innerWidth > 800) {
+        CompanyLogo.style.setProperty('width', '500px', 'important');
+        CompanyLogo.style.setProperty('padding-top', '100px');
+      } else if (window.innerWidth <= 800 && window.innerWidth > 480) {
+        CompanyLogo.style.setProperty('width', '300px', 'important');
+        CompanyLogo.style.setProperty('padding-top', '100px');
+      } else {
+        CompanyLogo.style.setProperty('width', '300px', 'important');
+        CompanyLogo.style.setProperty('padding-top', '150px');
+      }
+      
       Hero.style.margin = '0 5%';
     }
   });
@@ -74,13 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Button animation
   const btn = document.querySelector(".dbtn");
   setTimeout(() => {
-    if (window.innerWidth > 768) {
       btn.style.opacity = 1;
       btn.style.transform = "translateY(0)";
-    } else {
-      btn.style.opacity = 0;
-      btn.style.transform = "translateY(30px)";
-    }
   }, 750); // Adjust the delay (in milliseconds) to control when the animation starts
 
   const dbtn = document.querySelector(".dbtn");
