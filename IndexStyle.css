@@ -737,7 +737,7 @@ body {
 
 #CriticalPower {
   width: auto;
-  height: 200px;
+  height: 20vh;
 }
 
 @keyframes slideRight {
