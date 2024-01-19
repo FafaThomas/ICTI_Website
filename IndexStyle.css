@@ -11,7 +11,7 @@ body {
   font-family: "Roboto", serif;
   line-height: 1.6;
   color: #333;
-  background-image: url('Images/TestBackground.PNG');
+  background-image: url('Images/TestBackground.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
@@ -733,6 +733,11 @@ body {
 .partners-card p{
   padding-top: 10px;
   font-weight: bold;
+}
+
+#CriticalPower {
+  width: auto;
+  height: 200px;
 }
 
 @keyframes slideRight {
