@@ -146,20 +146,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  mobileburgerBtn.addEventListener("click", () => {
-    mobileburgerBtn.classList.toggle("active");
-    if (mobileburgerBtn.classList.contains("active")) {
-      let currentHeight = headerElement.clientHeight;
-      let newHeight = currentHeight + 60;
-      headerElement.style.height = `${newHeight}px`;
-      document.getElementById("mhero").style.transform = "translateY(-20%)";
-    } else {
-      let currentHeight = headerElement.clientHeight;
-      let newHeight = currentHeight - 60;
-      headerElement.style.height = `${newHeight}px`;
-      document.getElementById("mhero").style.transform = "translateY(-120%)";
-    }
-  });
 
   if (window.innerWidth <= 768 && mobileburgerBtn.classList.contains("active")) {
     let currentHeight = headerElement.clientHeight;
@@ -185,7 +171,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const targetId = this.getAttribute("href").substring(1); // Get the target section ID
       let offset = 0; // Default offset
-
       // Use a switch-case statement to set different offsets for specific sections
       switch (targetId) {
         case "products":
