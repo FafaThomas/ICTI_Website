@@ -9,6 +9,10 @@ body {
             background-attachment: fixed;
 }
 
+/*Header Section --Start-- */
+
+/*Rolling Banner Image Section --Start-- */
+
 .header {
   background-color: #333;
   color: #fff;
@@ -56,6 +60,10 @@ body {
   
 }
 
+/*Rolling Banner Image Section --End-- */
+
+/*Navigation Bar Section --Start-- */
+
 .navbar {
   display: flex;
   justify-content:space-between;
@@ -65,11 +73,25 @@ body {
   padding-bottom: 5%;
 }
 
+/*Company Logo Section --Start-- */
+
 .CompanyLogo {
   height: auto; /* Maintain aspect ratio */
   width: 100%; /* Adjust the width as needed */
-  
+  padding-left: 35px;
+  transition: transform .3s ease-in-out;
 }
+
+.CompanyLogo:hover {
+  transform: scale(1.1); /* Increase the size on hover */
+  cursor: pointer; /* Change cursor to a pointer on hover */
+}
+
+/*Company Logo Section --End-- */
+
+/*Navigation Menu Section --Start-- */
+
+/*Hamburger Button Section --Start-- */
 
 .bar {
   width: 100%;
@@ -101,6 +123,8 @@ body {
 .hamburger-btn.active .bar:nth-child(3) {
   transform: translateY(-9px) rotate(45deg);
 }
+
+/*Hamburger Button Section --End-- */
 
 .nav-container{
   display: inline-flex;
@@ -146,3 +170,41 @@ body {
   color: #ccc;
   transform: scale(1.1); /* Enlarge the link on hover */
 }
+
+/*Navigation Menu Section --End-- */
+
+/*Navigation Bar Section --End-- */
+
+/*Hero Section --Start-- */
+.dhero {
+  padding-left: 5%;
+  padding-right: 10%;
+}
+
+.dhero h2{
+  font-size: 40px;
+}
+
+.dhero p{
+  font-size: 25px;
+}
+
+
+.dbtn {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 5px;
+  background-color: #1900f7;
+  text-decoration: none;
+  font-size: 18px; /* Adjust the font size as needed */
+  font-weight: bold;
+  color: rgb(190, 190, 190);
+  cursor: pointer;
+  transition-duration: .5s;
+}
+
+.dbtn:hover {
+  background-color: #fc8f00;
+}
+/*Hero Section --End-- */
+/*Header Section --End-- */

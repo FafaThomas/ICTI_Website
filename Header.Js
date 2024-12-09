@@ -14,3 +14,13 @@
     menuContainer.style.opacity = '0';
    }
  });
+
+  // CompanyLogo Click
+  const CompanyLogo = document.querySelector(".CompanyLogo");
+
+  CompanyLogo.addEventListener("click", ()=> {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
