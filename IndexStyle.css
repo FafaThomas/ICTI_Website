@@ -12,51 +12,48 @@ body {
 .header {
   background-color: #333;
   color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  width: 100%;
-  height: 80%;
+  position: absolute;
   overflow: hidden;
-  transition-duration: .7s;
-  transition: height 0.7s ease;
-  /* Add the smooth transition class to the header */
-  transition: all 0.3s ease; /* Add this line */
-}
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode:overlay;
+  background-color: 1 rgba(68, 68, 68, 1);
 
-.banner-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+  animation-name: BannerSlider;
+  animation-direction: alternate-reverse;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  animation-duration: 120s;
+  animation-iteration-count: infinite;
+}
+@keyframes BannerSlider{
+  0%{
+    background-image: url('Images/Welcome Banner/BannerPhoto1.jpg');
+  }
+  16.7%{
+    background-image: url('Images/Welcome Banner/BannerPhoto2.jpg');
+  }
+  33.4%{
+    background-image: url('Images/Welcome Banner/BannerPhoto3.jpg');
+  }
+  50.1%{
+    background-image: url('Images/Welcome Banner/BannerPhoto4.jpg');
+  }
+  66.8%{
+    background-image: url('Images/Welcome Banner/BannerPhoto5.jpg');
+  }
+  83.5%{
+    background-image: url('Images/Welcome Banner/BannerPhoto6.jpg');
+  }
+  100%{
+    background-image: url('Images/Welcome Banner/BannerPhoto7.jpg');
+  }
   
-  object-fit: cover;
-  transition: opacity 1s ease-in-out;
-  
-}
-
-.banner-img:first-child {
-  opacity: 1;
-}
-
-.OpacityGray{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #333;
-  z-index: 2;
-  opacity: 80%;
-}
-
-.content {
-  position: relative;
-  z-index: 3;
-  padding: 20px;
-  padding-top: 0px;
-  color: #fff; /* Set your desired text color */
-  height: 80vh;
 }
 
 .navbar {
@@ -64,34 +61,21 @@ body {
   justify-content:space-between;
   align-items: center;
   height: 50px;
-}
-
-.nav-container{
-  display: inline-flex;
-  justify-content:space-between;
-  align-items: center;
-  padding-top: 90px;
-}
-
-.menu-container {
-  display: inline-flex;
-  transform: translateX(100%);
-  transition-duration: .5s;
-  opacity: 0;
-  margin-top: -20%;
-}
-
-.logo {
-  position: relative;
-
-  transition: transform 0.2s, cursor 0.2s;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .CompanyLogo {
-  width: 600px !important; /* Set your initial width here */
   height: auto; /* Maintain aspect ratio */
-  padding-top: 20%;
-  transition: .5s;
+  width: 100%; /* Adjust the width as needed */
+  
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: transform 0.3s;
 }
 
 .hamburger-btn {
@@ -101,16 +85,8 @@ body {
   justify-content: space-around;
   width: 30px;
   height: 25px;
-  transform: translateX(0%);
   transition-duration: .5s;
-  margin-top: -20%;
-}
-
-.bar {
-  width: 100%;
-  height: 4px;
-  background-color: #fff;
-  transition: transform 0.3s;
+  z-index: 2;
 }
 
 /* Hamburger button animation - Rotating bars */
@@ -124,4 +100,49 @@ body {
 
 .hamburger-btn.active .bar:nth-child(3) {
   transform: translateY(-9px) rotate(45deg);
+}
+
+.nav-container{
+  display: inline-flex;
+  justify-content:space-between;
+  align-items: center;
+  position: absolute;
+  right: 0%;
+  padding-right: 20px;
+  top: 3%;
+  transform: translateX(80%);
+  transition-duration: .5s;
+}
+
+.menu-container {
+  display: inline-flex;
+  transition-duration: .5s;
+  opacity: 0;
+}
+
+.nav-links {
+  padding-left: 5px;
+}
+
+.nav-links li {
+  display: inline-flex;
+  margin-top: 10px;
+  margin-left: 20px;
+  user-select: none;
+  -webkit-user-select: none; /* For Safari and older versions of Chrome */
+  -moz-user-select: none; /* For Firefox */
+  -ms-user-select: none; /* For Internet Explorer/Edge */
+  transition: transform 0.3s; /* Add a transition for the transform property */
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+  transform: scale(1.1); /* Enlarge the link on hover */
 }
